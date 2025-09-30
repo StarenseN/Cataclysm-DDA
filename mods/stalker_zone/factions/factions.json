@@ -1,6 +1,6 @@
 [
   {
-    "type": "npc_faction",
+    "type": "faction",
     "id": "loners",
     "name": "Loners",
     "likes_u": 0,
@@ -10,18 +10,10 @@
     "power": 50,
     "food_supply": 100,
     "wealth": 75,
-    "description": "Independent stalkers seeking fortune and survival in the Zone. United only by their desire for freedom and profit.",
-    "relations": {
-      "duty": [ "neutral", "trade" ],
-      "freedom": [ "neutral", "trade" ],
-      "bandits": [ "hostile", "kill on sight" ],
-      "military": [ "hostile", "avoid" ],
-      "scientists": [ "friendly", "trade" ],
-      "monolith": [ "hostile", "kill on sight" ]
-    }
+    "description": "Independent stalkers seeking fortune and survival in the Zone. United only by their desire for freedom and profit."
   },
   {
-    "type": "npc_faction",
+    "type": "faction",
     "id": "duty",
     "name": "Duty",
     "likes_u": -10,
@@ -31,18 +23,10 @@
     "power": 90,
     "food_supply": 120,
     "wealth": 85,
-    "description": "Military faction dedicated to containing the Zone's horrors and protecting the outside world from its expansion.",
-    "relations": {
-      "loners": [ "neutral", "recruit" ],
-      "freedom": [ "hostile", "war" ],
-      "bandits": [ "hostile", "kill on sight" ],
-      "military": [ "allied", "cooperate" ],
-      "scientists": [ "friendly", "protect" ],
-      "monolith": [ "hostile", "exterminate" ]
-    }
+    "description": "Military faction dedicated to containing the Zone's horrors and protecting the outside world from its expansion."
   },
   {
-    "type": "npc_faction",
+    "type": "faction",
     "id": "freedom",
     "name": "Freedom",
     "likes_u": -5,
@@ -52,18 +36,10 @@
     "power": 75,
     "food_supply": 90,
     "wealth": 70,
-    "description": "Anarchist fighters opposing authoritarian control over the Zone. They believe the Zone's secrets should be freely shared.",
-    "relations": {
-      "loners": [ "friendly", "recruit" ],
-      "duty": [ "hostile", "war" ],
-      "bandits": [ "neutral", "uneasy" ],
-      "military": [ "hostile", "fight" ],
-      "scientists": [ "allied", "protect" ],
-      "monolith": [ "hostile", "kill on sight" ]
-    }
+    "description": "Anarchist fighters opposing authoritarian control over the Zone. They believe the Zone's secrets should be freely shared."
   },
   {
-    "type": "npc_faction",
+    "type": "faction",
     "id": "scientists",
     "name": "Ecologists",
     "likes_u": 10,
@@ -73,18 +49,10 @@
     "power": 25,
     "food_supply": 110,
     "wealth": 150,
-    "description": "Research scientists studying the Zone's anomalous phenomena. They seek to understand and potentially harness the Zone's power.",
-    "relations": {
-      "loners": [ "friendly", "hire" ],
-      "duty": [ "friendly", "cooperate" ],
-      "freedom": [ "allied", "research together" ],
-      "bandits": [ "hostile", "avoid" ],
-      "military": [ "neutral", "official cooperation" ],
-      "monolith": [ "hostile", "study specimens" ]
-    }
+    "description": "Research scientists studying the Zone's anomalous phenomena. They seek to understand and potentially harness the Zone's power."
   },
   {
-    "type": "npc_faction",
+    "type": "faction",
     "id": "bandits",
     "name": "Bandits",
     "likes_u": -20,
@@ -94,18 +62,10 @@
     "power": 40,
     "food_supply": 60,
     "wealth": 45,
-    "description": "Criminals and outcasts who prey on other stalkers. They survive through robbery, extortion, and violence.",
-    "relations": {
-      "loners": [ "hostile", "rob" ],
-      "duty": [ "hostile", "kill on sight" ],
-      "freedom": [ "neutral", "uneasy" ],
-      "military": [ "hostile", "avoid" ],
-      "scientists": [ "hostile", "kidnap for ransom" ],
-      "monolith": [ "hostile", "fear" ]
-    }
+    "description": "Criminals and outcasts who prey on other stalkers. They survive through robbery, extortion, and violence."
   },
   {
-    "type": "npc_faction",
+    "type": "faction",
     "id": "military",
     "name": "Military",
     "likes_u": -25,
@@ -115,18 +75,10 @@
     "power": 100,
     "food_supply": 150,
     "wealth": 200,
-    "description": "Government forces tasked with containing the Zone and eliminating illegal stalkers. Well-equipped but struggling against Zone's dangers.",
-    "relations": {
-      "loners": [ "hostile", "arrest or kill" ],
-      "duty": [ "allied", "official cooperation" ],
-      "freedom": [ "hostile", "eliminate" ],
-      "bandits": [ "hostile", "kill on sight" ],
-      "scientists": [ "neutral", "regulated cooperation" ],
-      "monolith": [ "hostile", "military priority target" ]
-    }
+    "description": "Government forces tasked with containing the Zone and eliminating illegal stalkers. Well-equipped but struggling against Zone's dangers."
   },
   {
-    "type": "npc_faction",
+    "type": "faction",
     "id": "monolith",
     "name": "Monolith",
     "likes_u": -50,
@@ -136,14 +88,6 @@
     "power": 120,
     "food_supply": 200,
     "wealth": 500,
-    "description": "Fanatical cult serving the Zone's consciousness. They guard the center with supernatural dedication and advanced technology.",
-    "relations": {
-      "loners": [ "hostile", "convert or kill" ],
-      "duty": [ "hostile", "kill all outsiders" ],
-      "freedom": [ "hostile", "kill all outsiders" ],
-      "bandits": [ "hostile", "kill all outsiders" ],
-      "military": [ "hostile", "kill all outsiders" ],
-      "scientists": [ "hostile", "kill all outsiders" ]
-    }
+    "description": "Fanatical cult serving the Zone's consciousness. They guard the center with supernatural dedication and advanced technology."
   }
 ]
