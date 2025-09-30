@@ -10,10 +10,7 @@
     "max_intensity": 10,
     "dur_add_perc": 100,
     "int_add_val": 1,
-    "show_in_info": true,
-    "effects": [
-      { "effect": "movement_impaired", "duration": "10 s", "intensity": 2 }
-    ]
+    "show_in_info": true
   },
   {
     "type": "effect_type", 
@@ -26,11 +23,7 @@
     "max_intensity": 10,
     "dur_add_perc": 100,
     "int_add_val": 3,
-    "show_in_info": true,
-    "hurt_msg": [ "The gravitational forces crush your body.", 3 ],
-    "damage_over_time": [
-      { "damage_type": "bash", "amount": 2, "bodyparts": [ "torso", "head", "arm_l", "arm_r", "leg_l", "leg_r" ] }
-    ]
+    "show_in_info": true
   },
   {
     "type": "effect_type",
@@ -43,11 +36,7 @@
     "max_intensity": 10,
     "dur_add_perc": 100,
     "int_add_val": 10,
-    "show_in_info": true,
-    "hurt_msg": [ "Your bones crack under the immense gravitational pressure.", 10 ],
-    "damage_over_time": [
-      { "damage_type": "bash", "amount": 15, "bodyparts": [ "torso", "head", "arm_l", "arm_r", "leg_l", "leg_r" ] }
-    ]
+    "show_in_info": true
   },
   {
     "type": "effect_type",
@@ -60,11 +49,7 @@
     "max_intensity": 10,
     "dur_add_perc": 100,
     "int_add_val": 2,
-    "show_in_info": true,
-    "hurt_msg": [ "The intense heat burns your flesh.", 4 ],
-    "damage_over_time": [
-      { "damage_type": "heat", "amount": 3, "bodyparts": [ "torso", "head", "arm_l", "arm_r", "leg_l", "leg_r" ] }
-    ]
+    "show_in_info": true
   },
   {
     "type": "effect_type",
@@ -90,11 +75,7 @@
     "max_intensity": 10,
     "dur_add_perc": 100,
     "int_add_val": 2,
-    "show_in_info": true,
-    "hurt_msg": [ "Acid burns through your skin.", 3 ],
-    "damage_over_time": [
-      { "damage_type": "acid", "amount": 2, "bodyparts": [ "torso", "arm_l", "arm_r", "leg_l", "leg_r" ] }
-    ]
+    "show_in_info": true
   },
   {
     "type": "effect_type",
@@ -107,11 +88,7 @@
     "max_intensity": 15,
     "dur_add_perc": 100,
     "int_add_val": 3,
-    "show_in_info": true,
-    "hurt_msg": [ "Acid burns deep into your flesh.", 5 ],
-    "damage_over_time": [
-      { "damage_type": "acid", "amount": 4, "bodyparts": [ "torso", "head", "arm_l", "arm_r", "leg_l", "leg_r", "foot_l", "foot_r" ] }
-    ]
+    "show_in_info": true
   },
   {
     "type": "effect_type",
@@ -124,14 +101,7 @@
     "max_intensity": 10,
     "dur_add_perc": 100,
     "int_add_val": 2,
-    "show_in_info": true,
-    "hurt_msg": [ "The cold numbs your flesh.", 2 ],
-    "damage_over_time": [
-      { "damage_type": "cold", "amount": 1, "bodyparts": [ "hand_l", "hand_r", "foot_l", "foot_r" ] }
-    ],
-    "effects": [
-      { "effect": "movement_impaired", "duration": "5 m", "intensity": 1 }
-    ]
+    "show_in_info": true
   },
   {
     "type": "effect_type",
@@ -157,8 +127,7 @@
     "max_intensity": 10,
     "dur_add_perc": 100,
     "int_add_val": 8,
-    "show_in_info": true,
-    "hurt_msg": [ "You're thrown through the air!", 8 ]
+    "show_in_info": true
   },
   {
     "type": "effect_type",
@@ -171,11 +140,7 @@
     "max_intensity": 10,
     "dur_add_perc": 100,
     "int_add_val": 6,
-    "show_in_info": true,
-    "hurt_msg": [ "The impact breaks bones and bruises flesh.", 6 ],
-    "damage_over_time": [
-      { "damage_type": "bash", "amount": 8, "bodyparts": [ "torso", "head", "arm_l", "arm_r", "leg_l", "leg_r" ] }
-    ]
+    "show_in_info": true
   },
   {
     "type": "effect_type",
@@ -201,10 +166,7 @@
     "max_intensity": 5,
     "dur_add_perc": 100,
     "int_add_val": 1,
-    "show_in_info": true,
-    "effects": [
-      { "effect": "nausea", "duration": "30 m", "intensity": 1 }
-    ]
+    "show_in_info": true
   },
   {
     "type": "effect_type",
@@ -217,11 +179,7 @@
     "max_intensity": 10,
     "dur_add_perc": 100,
     "int_add_val": 2,
-    "show_in_info": true,
-    "effects": [
-      { "effect": "hallucination", "duration": "10 m", "intensity": 1 },
-      { "effect": "fear", "duration": "5 m", "intensity": 2 }
-    ]
+    "show_in_info": true
   },
   {
     "type": "effect_type",
