@@ -1,0 +1,42 @@
+[
+  {
+    "type": "scenario",
+    "id": "zone_stalker_expedition",
+    "name": "Zone Expedition Stalker",
+    "description": "You are a rookie stalker operating from the Cordon checkpoint. The Zone calls with promises of artifacts and fortune, but beware - expeditions are dangerous and time-limited. Plan carefully, survive the emissions, and return with your prize.",
+    "points": 2,
+    "start_name": "Cordon Checkpoint",
+    "allowed_locs": [ "cordon_checkpoint_hub" ],
+    "professions": [ 
+      "zone_stalker", 
+      "zone_scientist", 
+      "zone_military_deserter", 
+      "zone_rookie", 
+      "zone_trader" 
+    ],
+    "flags": [ "CITY_START" ],
+    "map_special": "mx_cordon_base",
+    "starting_city": {
+      "name": "Cordon Checkpoint",
+      "size": 4,
+      "distance": 0
+    },
+    "start_location": {
+      "type": "overmap_location",
+      "id": "cordon_checkpoint_hub",
+      "name": "Cordon Security Checkpoint",
+      "terrain": [
+        { "p": [ 0, 0, 0 ], "overmap": "zone_cordon_base_north" },
+        { "p": [ 0, 1, 0 ], "overmap": "zone_cordon_base_center" },
+        { "p": [ 0, 2, 0 ], "overmap": "zone_cordon_base_south" },
+        { "p": [ 1, 1, 0 ], "overmap": "zone_cordon_trading_post" }
+      ]
+    }
+  },
+  {
+    "type": "start_location", 
+    "id": "cordon_checkpoint",
+    "name": "Cordon Military Checkpoint",
+    "terrain": [ "zone_cordon_base_center" ]
+  }
+]

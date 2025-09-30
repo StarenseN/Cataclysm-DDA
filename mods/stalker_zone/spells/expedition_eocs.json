@@ -1,0 +1,231 @@
+[
+  {
+    "type": "effect_on_condition",
+    "id": "eoc_start_zone_expedition",
+    "condition": { "not": { "u_has_effect": "zone_expedition_active" } },
+    "effect": [
+      { "u_message": "You pass through the checkpoint and enter the Zone perimeter..." },
+      { "u_message": "The Geiger counter begins clicking ominously as background radiation increases." },
+      { "u_add_effect": "zone_expedition_active", "duration": "6 h" },
+      { "u_add_effect": "zone_background_radiation", "duration": "6 h" },
+      { "run_eocs": [ "eoc_expedition_deployment" ] },
+      { "queue_eocs": [ "eoc_emission_cycle_start" ], "time_in_future": [ "1 h", "3 h" ] }
+    ]
+  },
+  {
+    "type": "effect_on_condition", 
+    "id": "eoc_expedition_deployment",
+    "effect": [
+      { "u_message": "Choose your expedition area:" },
+      { "u_message": "1. Outer Zone (Safe, basic artifacts)" },
+      { "u_message": "2. Industrial Zone (Moderate danger, better loot)" },
+      { "u_message": "3. Deep Zone (High danger, rare artifacts)" },
+      { "u_add_var": "expedition_zone_choice", "type": "dialogue", "context": "expedition", "value": "outer" }
+    ],
+    "true_eocs": [
+      {
+        "id": "eoc_deploy_outer_zone",
+        "condition": { "compare_string": [ "expedition_zone_choice", "outer" ] },
+        "effect": [
+          { "u_teleport": { "ter": "zone_outer_expedition", "force": true } },
+          { "u_message": "Deploying to Outer Zone. Moderate radiation, light anomaly presence." }
+        ]
+      },
+      {
+        "id": "eoc_deploy_industrial_zone", 
+        "condition": { "compare_string": [ "expedition_zone_choice", "industrial" ] },
+        "effect": [
+          { "u_teleport": { "ter": "zone_industrial_expedition", "force": true } },
+          { "u_message": "Deploying to Industrial Zone. Elevated radiation, active anomaly fields." }
+        ]
+      },
+      {
+        "id": "eoc_deploy_deep_zone",
+        "condition": { "compare_string": [ "expedition_zone_choice", "deep" ] },
+        "effect": [
+          { "u_teleport": { "ter": "zone_deep_expedition", "force": true } },
+          { "u_message": "Deploying to Deep Zone. Extreme danger. High-value targets confirmed." }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "eoc_emission_cycle_start",
+    "effect": [
+      { "u_message": "Your equipment starts picking up atmospheric disturbances..." },
+      { "u_add_effect": "emission_imminent", "duration": "15 m" },
+      { "queue_eocs": [ "eoc_emission_warning_10min" ], "time_in_future": "5 m" },
+      { "queue_eocs": [ "eoc_emission_warning_5min" ], "time_in_future": "10 m" },
+      { "queue_eocs": [ "eoc_emission_event" ], "time_in_future": "15 m" }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "eoc_emission_warning_10min", 
+    "effect": [
+      { "u_message": "EMISSION WARNING: 10 minutes until atmospheric discharge!", "type": "bad" },
+      { "u_message": "All electronics are malfunctioning. Seek immediate shelter!" },
+      { "u_add_effect": "electronics_malfunction", "duration": "10 m" }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "eoc_emission_warning_5min",
+    "effect": [
+      { "u_message": "CRITICAL EMISSION WARNING: 5 MINUTES TO IMPACT!", "type": "bad" },
+      { "u_message": "Static fills the air. The Zone is about to SCREAM!", "type": "bad" },
+      { "sound_effect": "emission_warning", "volume": 50, "id": "emission" }
+    ]
+  },
+  {
+    "type": "effect_on_condition", 
+    "id": "eoc_emission_event",
+    "effect": [
+      { "u_message": "THE EMISSION STRIKES! Reality tears apart around you!", "type": "bad" },
+      { "u_cast_spell": { "id": "spell_emission_blast" } },
+      { "run_eocs": [ "eoc_emission_shelter_check" ] },
+      { "queue_eocs": [ "eoc_post_emission_effects" ], "time_in_future": "5 m" }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "eoc_emission_shelter_check",
+    "condition": { 
+      "or": [
+        { "u_is_outside": false },
+        { "u_at": { "ter": [ "t_concrete_wall", "t_rock_wall", "t_metal_wall" ] } }
+      ]
+    },
+    "effect": [
+      { "u_message": "You weather the emission in relative safety.", "type": "good" },
+      { "u_add_effect": "emission_exposure_light", "duration": "1 h" }
+    ],
+    "false_effect": [
+      { "u_message": "Caught in the open! The emission tears at your body and mind!", "type": "bad" },
+      { "u_add_effect": "zone_emission_exposure", "duration": "6 h", "intensity": 3 },
+      { "u_lose_hp": "torso", 50 },
+      { "u_lose_hp": "head", 30 }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "eoc_post_emission_effects", 
+    "effect": [
+      { "u_message": "The emission passes, leaving an eerie silence in its wake." },
+      { "u_message": "The anomaly fields have shifted. New artifacts may have formed." },
+      { "run_eocs": [ "eoc_spawn_post_emission_artifacts" ] },
+      { "queue_eocs": [ "eoc_emission_cycle_start" ], "time_in_future": [ "2 h", "4 h" ] }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "eoc_spawn_post_emission_artifacts",
+    "effect": [
+      { "u_spawn_item": "artifact_droplet", "count": 1, "suppress_message": true },
+      { "u_message": "You spot something glinting near the anomaly field..." }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "eoc_expedition_timer_warning", 
+    "condition": { "u_has_effect": "zone_expedition_active" },
+    "effect": [
+      { "u_message": "Expedition time running low. Consider extraction soon.", "type": "mixed" }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "eoc_expedition_timeout",
+    "condition": { "u_has_effect": "zone_expedition_active" },
+    "effect": [
+      { "u_message": "EXPEDITION TIMEOUT! The Zone turns hostile!", "type": "bad" },
+      { "u_remove_effect": "zone_expedition_active" },
+      { "u_add_effect": "expedition_overdue", "duration": "permanent" },
+      { "u_message": "You must find your own way back now. The Zone will not be merciful." }
+    ]
+  },
+  {
+    "type": "effect_on_condition", 
+    "id": "eoc_emergency_extraction",
+    "condition": { "u_has_effect": "zone_expedition_active" },
+    "effect": [
+      { "u_message": "Emergency extraction helicopter inbound! Prepare for immediate evacuation!" },
+      { "u_message": "You hear the distant sound of helicopter rotors approaching..." },
+      { "u_remove_effect": "zone_expedition_active" },
+      { "u_remove_effect": "expedition_overdue" },
+      { "u_teleport": { "ter": "zone_cordon_base_center", "force": true } },
+      { "u_message": "You are extracted to safety, but at great cost to your reputation.", "type": "mixed" },
+      { "u_add_effect": "reputation_penalty", "duration": "24 h" }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "eoc_successful_extraction",
+    "condition": { 
+      "and": [
+        { "u_has_effect": "zone_expedition_active" },
+        { "u_at": { "ter": "zone_cordon_base_center" } }
+      ]
+    },
+    "effect": [
+      { "u_message": "Successfully returned to checkpoint! Mission complete.", "type": "good" },
+      { "u_remove_effect": "zone_expedition_active" },
+      { "u_remove_effect": "zone_background_radiation" },
+      { "u_add_effect": "stalker_reputation_boost", "duration": "24 h" },
+      { "run_eocs": [ "eoc_expedition_debrief" ] }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "eoc_expedition_debrief",
+    "effect": [
+      { "u_message": "Checkpoint Officer: 'Welcome back, stalker. Let's see what you brought us.'" },
+      { "u_message": "Debrief complete. Artifact payment processed." },
+      { "u_message": "Equipment maintenance: Your gear shows signs of Zone exposure." },
+      { "u_message": "New expeditions available in 24 hours." },
+      { "u_spawn_item": "zone_expedition_permit", "count": 1 }
+    ]
+  },
+  {
+    "type": "effect_on_condition", 
+    "id": "eoc_expedition_planning_menu",
+    "effect": [
+      { "u_message": "=== EXPEDITION PLANNING SYSTEM ===" },
+      { "u_message": "Current Status: Checkpoint Ready" },
+      { "u_message": "Available Expeditions:" },
+      { "u_message": "1. Artifact Recovery - Outer Zone (Low Risk)" },
+      { "u_message": "2. Scientific Survey - Industrial Area (Medium Risk)" },
+      { "u_message": "3. Deep Reconnaissance - Inner Zone (High Risk)" },
+      { "u_message": "" },
+      { "u_message": "Emission Forecast: Next emission in 2-4 hours" },
+      { "u_message": "Equipment Status: Operational" },
+      { "u_message": "Medical Clearance: Approved" },
+      { "u_message": "" },
+      { "u_message": "Select expedition type and acquire permit from Checkpoint Officer." }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "eoc_equipment_degradation_check",
+    "condition": { "u_has_effect": "zone_expedition_active" },
+    "effect": [
+      { "u_message": "Your equipment shows signs of Zone-induced wear..." },
+      { "u_add_effect": "equipment_degradation", "duration": "2 h" }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "eoc_zone_adaptation_gain", 
+    "condition": { 
+      "and": [
+        { "u_has_effect": "zone_expedition_active" },
+        { "not": { "u_has_effect": "zone_adaptation" } }
+      ]
+    },
+    "effect": [
+      { "u_message": "Your senses sharpen as you adapt to Zone conditions.", "type": "good" },
+      { "u_add_effect": "zone_adaptation", "duration": "12 h" }
+    ]
+  }
+]

@@ -1,0 +1,291 @@
+[
+  {
+    "type": "mapgen",
+    "method": "json",
+    "om_terrain": [ "zone_cordon_base_center" ],
+    "weight": 100,
+    "object": {
+      "rows": [
+        "########################",
+        "#......................#",
+        "#.##################### ",
+        "#.#ssssssssssssssssss# ",
+        "#.#s................s# ",
+        "#.#s..tttt....tttt..s# ",
+        "#.#s..tCCt....tCCt..s# ",
+        "#.#s..tCCt....tCCt..s# ",
+        "#.#s..tttt....tttt..s# ",
+        "#.#s................s# ",
+        "#.#s......++++......s# ",
+        "#.#s......+HH+......s# ",
+        "#.#s......+HH+......s# ",
+        "#.#s......++++......s# ",
+        "#.#s................s# ",
+        "#.#s..%%%%....%%%%..s# ",
+        "#.#s..%%%%....%%%%..s# ",
+        "#.#s..%%%%....%%%%..s# ",
+        "#.#s..%%%%....%%%%..s# ",
+        "#.#s................s# ",
+        "#.#ssssssss++ssssssss# ",
+        "#.#################### ",
+        "#......................#",
+        "########################"
+      ],
+      "terrain": {
+        "#": "t_chainfence",
+        " ": "t_pavement",
+        ".": "t_concrete",
+        "s": "t_concrete_wall",
+        "+": "t_door_metal_c",
+        "t": "t_floor",
+        "C": "t_floor",
+        "H": "t_floor",
+        "%": "t_floor"
+      },
+      "furniture": {
+        "C": "f_counter",
+        "H": "f_bed",
+        "%": "f_crate_c"
+      },
+      "items": {
+        "C": { "item": "zone_checkpoint_supplies", "chance": 80, "repeat": [ 2, 4 ] },
+        "%": { "item": "zone_military_gear", "chance": 60, "repeat": [ 1, 3 ] }
+      },
+      "place_npcs": [
+        { "class": "NC_CHECKPOINT_OFFICER", "x": 11, "y": 6, "target": true },
+        { "class": "NC_EQUIPMENT_TRADER", "x": 17, "y": 6, "target": true },
+        { "class": "NC_MISSION_COORDINATOR", "x": 11, "y": 11, "target": true }
+      ],
+      "place_signs": [
+        { "signage": "CORDON CHECKPOINT - AUTHORIZED PERSONNEL ONLY", "x": 11, "y": 2 },
+        { "signage": "EXPEDITION PERMITS REQUIRED FOR ZONE ACCESS", "x": 11, "y": 20 }
+      ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "method": "json", 
+    "om_terrain": [ "zone_cordon_trading_post" ],
+    "weight": 100,
+    "object": {
+      "rows": [
+        "########################",
+        "#......................#",
+        "#..wwwwwwwwwwwwwwwwww..#",
+        "#..w................w..#",
+        "#..w..cccccccccccc..w..#",
+        "#..w..c..........c..w..#",
+        "#..w..c..TTTTTT..c..w..#",
+        "#..w..c..TTTTTT..c..w..#",
+        "#..w..c..TTTTTT..c..w..#", 
+        "#..w..c..........c..w..#",
+        "#..w..c....++....c..w..#",
+        "#..w..c....++....c..w..#",
+        "#..w..c..........c..w..#",
+        "#..w..c..%%%%%%..c..w..#",
+        "#..w..c..%%%%%%..c..w..#",
+        "#..w..c..%%%%%%..c..w..#",
+        "#..w..c..%%%%%%..c..w..#",
+        "#..w..c..........c..w..#",
+        "#..w..cccccc+ccccc..w..#",
+        "#..w................w..#",
+        "#..wwwwwwwwwwwwwwwwww..#",
+        "#......................#",
+        "#......................#",
+        "########################"
+      ],
+      "terrain": {
+        "#": "t_chainfence",
+        ".": "t_dirt",
+        "w": "t_concrete_wall",
+        "c": "t_concrete_wall", 
+        "+": "t_door_metal_c",
+        "T": "t_floor",
+        "%": "t_floor"
+      },
+      "furniture": {
+        "T": "f_table",
+        "%": "f_crate_c"
+      },
+      "items": {
+        "T": { "item": "zone_trader_goods", "chance": 90, "repeat": [ 3, 6 ] },
+        "%": { "item": "zone_artifacts", "chance": 25, "repeat": [ 1, 2 ] }
+      },
+      "place_npcs": [
+        { "class": "NC_SIDOROVICH", "x": 11, "y": 7, "target": true },
+        { "class": "NC_STALKER_TRADER", "x": 8, "y": 14, "target": true },
+        { "class": "NC_EQUIPMENT_SPECIALIST", "x": 14, "y": 14, "target": true }
+      ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "method": "json",
+    "om_terrain": [ "zone_outer_expedition" ],
+    "weight": 100,
+    "object": {
+      "rows": [
+        "tttttttttttttttttttttttt",
+        "t......................t",
+        "t......................t",
+        "t......^^^.............t",
+        "t.....^^^^^............t", 
+        "t......^^^.............t",
+        "t......................t",
+        "t......................t",
+        "t..........~~~~........t",
+        "t.........~~~~~~.......t",
+        "t..........~~~~........t",
+        "t......................t",
+        "t......................t",
+        "t......::::::..........t",
+        "t.....::::::::.........t",
+        "t......::::::..........t",
+        "t......................t",
+        "t......................t",
+        "t......................t",
+        "t......................t",
+        "t......................t",
+        "t......................t",
+        "t......................t",
+        "tttttttttttttttttttttttt"
+      ],
+      "terrain": {
+        "t": "t_tree",
+        ".": "t_grass",
+        "^": "t_grass",
+        "~": "t_grass", 
+        ":": "t_grass"
+      },
+      "fields": {
+        "^": { "field": "fd_burner", "intensity": 1, "age": 0 },
+        "~": { "field": "fd_whirligig", "intensity": 1, "age": 0 },
+        ":": { "field": "fd_electro", "intensity": 1, "age": 0 }
+      },
+      "items": {
+        "^": { "item": "artifact_fireball", "chance": 15 },
+        "~": { "item": "artifact_bubble", "chance": 18 },
+        ":": { "item": "artifact_battery", "chance": 12 }
+      },
+      "monsters": {
+        ".": { "monster": "mon_zone_blinddog", "chance": 8, "density": 0.2 }
+      }
+    }
+  },
+  {
+    "type": "mapgen",
+    "method": "json",
+    "om_terrain": [ "zone_industrial_expedition" ],
+    "weight": 100,
+    "object": {
+      "rows": [
+        "rrrrrrrrrrrrrrrrrrrrrrrr",
+        "r......................r",
+        "r..bbbbbbbbbbbbbbbb....r",
+        "r..b................b..r",
+        "r..b..^^^^....^^^^..b..r",
+        "r..b..^^^^....^^^^..b..r", 
+        "r..b..^^^^....^^^^..b..r",
+        "r..b................b..r",
+        "r..b................b..r",
+        "r..b...~~~~~~.......b..r",
+        "r..b..~~~~~~~~......b..r",
+        "r..b...~~~~~~.......b..r",
+        "r..b................b..r",
+        "r..b..::::::::::....b..r",
+        "r..b..::::::::::....b..r",
+        "r..b..::::::::::....b..r",
+        "r..b................b..r",
+        "r..b................b..r",
+        "r..bbbbbbbb++bbbbbbb...r",
+        "r......................r",
+        "r......................r",
+        "r......................r",
+        "r......................r",
+        "rrrrrrrrrrrrrrrrrrrrrrrr"
+      ],
+      "terrain": {
+        "r": "t_rock",
+        ".": "t_dirt",
+        "b": "t_concrete_wall",
+        "+": "t_door_metal_c",
+        "^": "t_dirt",
+        "~": "t_dirt",
+        ":": "t_dirt"
+      },
+      "fields": {
+        "^": { "field": "fd_burner", "intensity": 2, "age": 0 },
+        "~": { "field": "fd_whirligig", "intensity": 2, "age": 0 },
+        ":": { "field": "fd_electro", "intensity": 2, "age": 0 }
+      },
+      "items": {
+        "^": { "item": "artifact_fireball", "chance": 25 },
+        "~": { "item": "artifact_bubble", "chance": 30 },
+        ":": { "item": "artifact_battery", "chance": 22 },
+        ".": { "item": "artifact_droplet", "chance": 8 }
+      },
+      "monsters": {
+        ".": { "monster": "mon_zone_pseudodog", "chance": 12, "density": 0.3 },
+        "b": { "monster": "mon_zone_snork", "chance": 15 }
+      }
+    }
+  },
+  {
+    "type": "mapgen",
+    "method": "json",
+    "om_terrain": [ "zone_deep_expedition" ],
+    "weight": 100,
+    "object": {
+      "rows": [
+        "dddddddddddddddddddddddd",
+        "d......................d",
+        "d..^^^^^^^^....^^^^^^^^d",
+        "d..^^^^^^^^....^^^^^^^^d",
+        "d..^^^^^^^^....^^^^^^^^d",
+        "d..^^^^^^^^....^^^^^^^^d",
+        "d......................d",
+        "d........~~~~~~........d",
+        "d.......~~~~~~~~.......d",
+        "d......~~~~~~~~~~......d",
+        "d......~~~~~~~~~~......d",
+        "d.......~~~~~~~~.......d",
+        "d........~~~~~~........d",
+        "d......................d",
+        "d..::::::::::::::::::::d",
+        "d..::::::::::::::::::::d", 
+        "d..::::::::::::::::::::d",
+        "d..::::::::::::::::::::d",
+        "d......................d",
+        "d......................d",
+        "d......................d",
+        "d......................d",
+        "d......................d",
+        "dddddddddddddddddddddddd"
+      ],
+      "terrain": {
+        "d": "t_tree_dead",
+        ".": "t_grass_dead",
+        "^": "t_grass_dead",
+        "~": "t_grass_dead",
+        ":": "t_grass_dead"
+      },
+      "fields": {
+        "^": { "field": "fd_burner", "intensity": 3, "age": 0 },
+        "~": { "field": "fd_whirligig", "intensity": 3, "age": 0 },
+        ":": { "field": "fd_electro", "intensity": 3, "age": 0 }
+      },
+      "items": {
+        "^": { "item": "artifact_fireball", "chance": 40 },
+        "~": { "item": "artifact_bubble", "chance": 45 },
+        ":": { "item": "artifact_battery", "chance": 35 },
+        ".": { "item": "artifact_moonlight", "chance": 15 },
+        "d": { "item": "artifact_soul", "chance": 8 }
+      },
+      "monsters": {
+        ".": { "monster": "mon_zone_bloodsucker", "chance": 20, "density": 0.4 },
+        "d": { "monster": "mon_zone_controller", "chance": 12 },
+        "^": { "monster": "mon_zone_pseudogiant", "chance": 5 }
+      }
+    }
+  }
+]

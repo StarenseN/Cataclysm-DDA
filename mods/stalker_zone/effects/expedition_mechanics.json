@@ -1,0 +1,133 @@
+[
+  {
+    "type": "effect_type",
+    "id": "zone_expedition_active",
+    "name": [ "Zone Expedition", "Zone Expeditions" ],
+    "desc": [ 
+      "You are on an active expedition into the Zone. Time remaining: %s",
+      "Expedition in progress. Return to checkpoint before time expires or face the consequences.",
+      "Deep in the Zone. Your window for safe extraction is closing rapidly."
+    ],
+    "apply_message": "You enter the Zone perimeter. Your expedition timer begins.",
+    "remove_message": "You return to the safety of the checkpoint.",
+    "rating": "mixed",
+    "max_intensity": 10,
+    "max_duration": "8 h",
+    "dur_add_perc": 100,
+    "int_add_val": 1,
+    "show_in_info": true,
+    "show_duration": true
+  },
+  {
+    "type": "effect_type",
+    "id": "emission_imminent",
+    "name": [ "Emission Warning", "Emission Warnings" ],
+    "desc": [
+      "The air pressure is dropping. Electronics malfunction. Find shelter immediately!",
+      "Atmospheric disturbance detected. 10 minutes until emission.",
+      "Emergency! 5 minutes until emission event. Take cover now!",
+      "CRITICAL: Emission in 2 minutes. Death is certain without shelter!"
+    ],
+    "apply_message": "Your equipment starts malfunctioning. Something terrible is coming.",
+    "remove_message": "The atmospheric pressure stabilizes.",
+    "rating": "bad",
+    "max_intensity": 4,
+    "max_duration": "15 m",
+    "dur_add_perc": 100,
+    "int_add_val": 1,
+    "show_in_info": true,
+    "show_duration": true,
+    "effects": [
+      { "effect": "anxiety", "duration": "10 m", "intensity": 3 },
+      { "effect": "electronics_malfunction", "duration": "15 m", "intensity": 2 }
+    ]
+  },
+  {
+    "type": "effect_type",
+    "id": "expedition_overdue",
+    "name": [ "Expedition Overdue", "Expeditions Overdue" ],
+    "desc": [
+      "Your expedition time has expired. The Zone becomes increasingly hostile.",
+      "You've overstayed your welcome. Reality itself turns against you.",
+      "The Zone is rejecting your presence. Every moment increases the danger."
+    ],
+    "apply_message": "Your time is up. The Zone begins to punish your presence.",
+    "remove_message": "You escape the Zone's wrath.",
+    "rating": "bad",
+    "max_intensity": 5,
+    "max_duration": "permanent",
+    "dur_add_perc": 100,
+    "int_add_val": 1,
+    "show_in_info": true,
+    "hurt_msg": [ "The Zone's malice seeps into your bones.", 4 ],
+    "damage_over_time": [
+      { "damage_type": "psychic", "amount": 2, "bodyparts": [ "torso", "head" ] }
+    ],
+    "effects": [
+      { "effect": "radiation", "duration": "1 h", "intensity": 3 },
+      { "effect": "hallucination", "duration": "30 m", "intensity": 2 },
+      { "effect": "weakness", "duration": "2 h", "intensity": 2 }
+    ]
+  },
+  {
+    "type": "effect_type", 
+    "id": "equipment_degradation",
+    "name": [ "Equipment Degradation", "Equipment Degradations" ],
+    "desc": [
+      "Zone exposure is damaging your equipment.",
+      "Your gear is failing under Zone conditions.",
+      "Critical equipment failure imminent!"
+    ],
+    "apply_message": "Your equipment shows signs of Zone-induced wear.",
+    "remove_message": "Your equipment stabilizes.",
+    "rating": "bad",
+    "max_intensity": 3,
+    "max_duration": "4 h",
+    "dur_add_perc": 100,
+    "int_add_val": 1,
+    "show_in_info": true
+  },
+  {
+    "type": "effect_type",
+    "id": "zone_adaptation",
+    "name": [ "Zone Adaptation", "Zone Adaptations" ],
+    "desc": [
+      "Your body is adapting to Zone conditions.",
+      "Prolonged Zone exposure grants enhanced senses.",
+      "You feel more attuned to the Zone's rhythms."
+    ],
+    "apply_message": "You feel more in tune with the Zone's energy.",
+    "remove_message": "The Zone adaptation fades.",
+    "rating": "good",
+    "max_intensity": 5,
+    "max_duration": "12 h",
+    "dur_add_perc": 100,
+    "int_add_val": 1,
+    "show_in_info": true,
+    "base_mods": {
+      "hearing_modifier": [ 2 ],
+      "perception_modifier": [ 1 ]
+    }
+  },
+  {
+    "type": "effect_type",
+    "id": "stalker_reputation_boost",
+    "name": [ "Reputation Bonus", "Reputation Bonuses" ],
+    "desc": [
+      "Your successful expeditions have earned respect.",
+      "Other stalkers recognize your competence.",
+      "Your reputation opens new opportunities."
+    ],
+    "apply_message": "Word of your success spreads among the stalker community.",
+    "remove_message": "Your reputation boost fades.",
+    "rating": "good",
+    "max_intensity": 3,
+    "max_duration": "24 h", 
+    "dur_add_perc": 100,
+    "int_add_val": 1,
+    "show_in_info": true,
+    "base_mods": {
+      "social_modifier": [ 2 ]
+    }
+  }
+]

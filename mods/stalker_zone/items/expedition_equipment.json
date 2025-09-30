@@ -1,0 +1,242 @@
+[
+  {
+    "type": "GENERIC",
+    "id": "zone_expedition_permit",
+    "name": { "str": "Zone Expedition Permit", "str_pl": "Zone Expedition Permits" },
+    "description": "Official permit allowing limited-time expeditions into the Zone. Valid for one entry. Required by checkpoint guards for legal Zone access.",
+    "weight": "50 g",
+    "volume": "25 ml",
+    "price": 1000,
+    "price_postapoc": 10000,
+    "symbol": "=",
+    "color": "green",
+    "material": [ "paper" ],
+    "flags": [ "TRADER_AVOID" ],
+    "use_action": {
+      "type": "effect_on_condition",
+      "description": "Use permit to begin Zone expedition",
+      "condition": {
+        "and": [
+          { "not": { "u_has_effect": "zone_expedition_active" } },
+          { "u_is_outside": true }
+        ]
+      },
+      "effect": [
+        { "u_message": "You present your permit to the checkpoint guards and enter the Zone..." },
+        { "u_consume_item": "zone_expedition_permit", "count": 1 },
+        { "run_eocs": [ "eoc_start_zone_expedition" ] }
+      ],
+      "false_effect": {
+        "u_message": "You cannot use this permit right now. Must be outside and not on expedition."
+      }
+    }
+  },
+  {
+    "type": "GENERIC",
+    "id": "zone_extraction_beacon",
+    "name": { "str": "Emergency Extraction Beacon", "str_pl": "Emergency Extraction Beacons" },
+    "description": "Emergency device for immediate extraction from Zone expeditions. Single use only. Activating this will end your current expedition and transport you to safety.",
+    "weight": "300 g",
+    "volume": "200 ml",
+    "price": 5000,
+    "price_postapoc": 50000,
+    "symbol": "!",
+    "color": "red",
+    "material": [ "plastic", "aluminum" ],
+    "flags": [ "ELECTRONIC", "TRADER_AVOID" ],
+    "use_action": {
+      "type": "effect_on_condition",
+      "description": "Activate emergency extraction",
+      "condition": { "u_has_effect": "zone_expedition_active" },
+      "effect": [
+        { "u_message": "Emergency extraction activated! Helicopter inbound..." },
+        { "u_consume_item": "zone_extraction_beacon", "count": 1 },
+        { "run_eocs": [ "eoc_emergency_extraction" ] }
+      ],
+      "false_effect": {
+        { "u_message": "Emergency extraction is only available during active expeditions." }
+      }
+    }
+  },
+  {
+    "type": "GENERIC",
+    "id": "expedition_planning_tablet",
+    "name": { "str": "Expedition Planning Tablet", "str_pl": "Expedition Planning Tablets" },
+    "description": "Military-grade tablet with Zone maps, emission forecasts, and mission briefings. Essential for planning successful expeditions. Shows available contracts and area intelligence.",
+    "weight": "800 g", 
+    "volume": "500 ml",
+    "price": 8000,
+    "price_postapoc": 80000,
+    "symbol": "(",
+    "color": "dark_gray",
+    "material": [ "plastic", "aluminum" ],
+    "ammo": [ "battery" ],
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "rigid": true,
+        "flag_restriction": [ "BATTERY_MEDIUM" ],
+        "default_magazine": "medium_battery_cell"
+      }
+    ],
+    "charges_per_use": 5,
+    "use_action": {
+      "type": "effect_on_condition",
+      "description": "Access expedition planning system",
+      "condition": { "not": { "u_has_effect": "zone_expedition_active" } },
+      "effect": [ { "run_eocs": [ "eoc_expedition_planning_menu" ] } ],
+      "false_effect": {
+        "u_message": "Cannot access planning system during active expedition."
+      }
+    },
+    "flags": [ "ELECTRONIC", "WATER_BREAK_ACTIVE", "EMP_PROOF" ]
+  },
+  {
+    "type": "ARMOR",
+    "id": "zone_expedition_suit",
+    "name": { "str": "Expedition Suit", "str_pl": "Expedition Suits" },
+    "description": "Lightweight protective suit designed for Zone expeditions. Provides moderate protection against radiation and anomalies while maintaining mobility. Standard issue for checkpoint operations.",
+    "weight": "3500 g",
+    "volume": "3500 ml",
+    "price": 15000,
+    "price_postapoc": 150000,
+    "to_hit": -3,
+    "bashing": 1,
+    "material": [ "plastic", "nomex" ],
+    "symbol": "[",
+    "color": "yellow",
+    "covers": [ "torso", "arm_l", "arm_r", "leg_l", "leg_r" ],
+    "coverage": 95,
+    "encumbrance": 15,
+    "max_encumbrance": 25,
+    "armor": [
+      { "damage_type": "bash", "amount": 8 },
+      { "damage_type": "cut", "amount": 12 },
+      { "damage_type": "acid", "amount": 15 },
+      { "damage_type": "fire", "amount": 8 },
+      { "damage_type": "electric", "amount": 10 }
+    ],
+    "environmental_protection": 3,
+    "environmental_protection_with_filter": 8,
+    "flags": [ "WATERPROOF", "RAD_PROOF", "STURDY", "VARSIZE" ],
+    "relic_data": {
+      "passive_effects": [
+        {
+          "has": "WORN",
+          "condition": "ALWAYS",
+          "values": [
+            { "value": "BONUS_DODGE", "add": -1 },
+            { "value": "CLIMATE_CONTROL", "add": 2 }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "GENERIC",
+    "id": "zone_mission_briefing",
+    "name": { "str": "Mission Briefing", "str_pl": "Mission Briefings" },
+    "description": "Detailed briefing document containing mission objectives, area intelligence, and safety protocols. Reading this provides crucial information for successful expedition completion.",
+    "weight": "100 g",
+    "volume": "50 ml",
+    "price": 0,
+    "price_postapoc": 1000,
+    "symbol": "?",
+    "color": "white",
+    "material": [ "paper" ],
+    "use_action": {
+      "type": "effect_on_condition",
+      "description": "Read mission briefing",
+      "effect": [
+        { "u_message": "MISSION BRIEFING - CLASSIFIED" },
+        { "u_message": "Objective: Recover artifact from designated anomaly field" },
+        { "u_message": "Threat Level: MODERATE - Expect mutant activity" },
+        { "u_message": "Emission Forecast: Next emission predicted in 3-4 hours" },
+        { "u_message": "Extraction Point: Return to checkpoint before expedition timer expires" },
+        { "u_message": "Payment: Base rate + artifact bonus - equipment replacement costs" },
+        { "u_add_effect": "mission_intel", "duration": "8 h" }
+      ]
+    },
+    "flags": [ "TRADER_AVOID" ]
+  },
+  {
+    "type": "GENERIC",
+    "id": "checkpoint_access_card",
+    "name": { "str": "Checkpoint Access Card", "str_pl": "Checkpoint Access Cards" },
+    "description": "Electronic access card for Cordon checkpoint facilities. Allows access to secure areas, equipment lockers, and trader services. Keep this safe - replacement is expensive.",
+    "weight": "25 g",
+    "volume": "10 ml",
+    "price": 2000,
+    "price_postapoc": 20000,
+    "symbol": "=",
+    "color": "blue",
+    "material": [ "plastic" ],
+    "flags": [ "ELECTRONIC", "TRADER_AVOID" ]
+  },
+  {
+    "type": "CONTAINER",
+    "id": "artifact_containment_case",
+    "name": { "str": "Artifact Containment Case", "str_pl": "Artifact Containment Cases" },
+    "description": "Lead-lined case designed for safe artifact transport. Reduces radiation emission and protects artifacts from damage during expedition. Essential for valuable artifact recovery missions.",
+    "weight": "2000 g",
+    "volume": "2000 ml", 
+    "price": 5000,
+    "price_postapoc": 50000,
+    "to_hit": -2,
+    "bashing": 8,
+    "material": [ "lead", "steel" ],
+    "symbol": "0",
+    "color": "dark_gray",
+    "contains": "1500 ml",
+    "seals": true,
+    "watertight": true,
+    "rigid": true,
+    "pocket_data": [
+      {
+        "pocket_type": "CONTAINER",
+        "max_contains_volume": "1500 ml",
+        "max_contains_weight": "5 kg",
+        "moves": 100,
+        "flag_restriction": [ "ARTIFACT" ]
+      }
+    ],
+    "flags": [ "BELT_CLIP", "DURABLE_MELEE", "RAD_PROOF" ]
+  },
+  {
+    "type": "GENERIC",
+    "id": "zone_communication_radio",
+    "name": { "str": "Zone Communication Radio", "str_pl": "Zone Communication Radios" },
+    "description": "Hardened military radio for maintaining contact with checkpoint during expeditions. EMP-resistant design survives most emission effects. Critical for emergency extraction calls.",
+    "weight": "600 g",
+    "volume": "400 ml",
+    "price": 4000,
+    "price_postapoc": 40000,
+    "symbol": ";",
+    "color": "green",
+    "material": [ "plastic", "steel" ],
+    "ammo": [ "battery" ],
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "rigid": true,
+        "flag_restriction": [ "BATTERY_MEDIUM" ],
+        "default_magazine": "medium_battery_cell"
+      }
+    ],
+    "charges_per_use": 2,
+    "use_action": {
+      "type": "effect_on_condition", 
+      "description": "Contact checkpoint",
+      "condition": { "u_has_effect": "zone_expedition_active" },
+      "effect": [
+        { "u_message": "Checkpoint Control, this is expedition team. Status report..." },
+        { "u_message": "Roger expedition team. Emission forecast updated. Be advised: anomaly activity increasing in your sector." },
+        { "u_add_effect": "radio_contact", "duration": "1 h" }
+      ],
+      "false_effect": {
+        "u_message": "No expedition active. Radio check complete."
+      }
+    },
+    "flags": [ "ELECTRONIC", "EMP_PROOF", "BELT_CLIP" ]
+  }
+]
