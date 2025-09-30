@@ -1,0 +1,274 @@
+[
+  {
+    "type": "COMESTIBLE",
+    "id": "antirad_pills",
+    "name": { "str": "Anti-Rad Pills", "str_pl": "Anti-Rad Pills" },
+    "description": "Soviet-era radiation treatment medication. These pills help the body process and eliminate radioactive contamination. Essential for Zone survival, though they have unpleasant side effects.",
+    "weight": "50 g",
+    "volume": "25 ml", 
+    "price": 150,
+    "price_postapoc": 1500,
+    "symbol": "!",
+    "color": "yellow",
+    "material": [ "powder" ],
+    "primary_material": "powder",
+    "charges": 10,
+    "stack_size": 20,
+    "comestible_type": "MED",
+    "tool": "null",
+    "addiction_type": "none",
+    "use_action": {
+      "type": "consume_drug",
+      "activation_message": "You swallow the bitter anti-radiation pill.",
+      "effects": [
+        { "id": "pkill1", "duration": "2 h" },
+        { "id": "radiation_resist", "duration": "4 h" }
+      ],
+      "stat_adjustments": {
+        "radiation": -50
+      },
+      "vitamins": [ [ "redcells", 2 ] ]
+    },
+    "flags": [ "IRREPLACEABLE_CONSUMABLE", "NO_INGEST" ]
+  },
+  {
+    "type": "COMESTIBLE",
+    "id": "radioprotectant",
+    "name": { "str": "Radioprotectant", "str_pl": "Radioprotectants" },
+    "description": "Advanced preventive medication that boosts the body's resistance to radiation before exposure. Much more expensive than anti-rad pills but provides superior protection.",
+    "weight": "80 g",
+    "volume": "40 ml",
+    "price": 400,
+    "price_postapoc": 4000,
+    "symbol": "!",
+    "color": "green",
+    "material": [ "powder" ],
+    "primary_material": "powder",
+    "charges": 5,
+    "stack_size": 10,
+    "comestible_type": "MED",
+    "tool": "null",
+    "addiction_type": "none",
+    "use_action": {
+      "type": "consume_drug",
+      "activation_message": "The radioprotectant tastes metallic as you swallow it.",
+      "effects": [
+        { "id": "radiation_immunity", "duration": "2 h" },
+        { "id": "nausea", "duration": "30 m" }
+      ],
+      "stat_adjustments": {
+        "radiation": -25
+      }
+    },
+    "flags": [ "IRREPLACEABLE_CONSUMABLE", "NO_INGEST" ]
+  },
+  {
+    "type": "COMESTIBLE", 
+    "id": "rad_x_advanced",
+    "name": { "str": "Rad-X Advanced", "str_pl": "Rad-X Advanced" },
+    "description": "Experimental high-strength radiation treatment developed by Zone scientists. Provides immediate massive reduction in radiation levels, but the side effects can be severe.",
+    "weight": "30 g",
+    "volume": "20 ml",
+    "price": 800,
+    "price_postapoc": 8000,
+    "symbol": "!",
+    "color": "red",
+    "material": [ "powder" ],
+    "primary_material": "powder",
+    "charges": 3,
+    "stack_size": 5,
+    "comestible_type": "MED",
+    "tool": "null",
+    "addiction_type": "none",
+    "use_action": {
+      "type": "consume_drug",
+      "activation_message": "The experimental medication burns as it goes down.",
+      "effects": [
+        { "id": "pkill2", "duration": "4 h" },
+        { "id": "radiation_immunity", "duration": "1 h" },
+        { "id": "weakness", "duration": "6 h" },
+        { "id": "nausea", "duration": "2 h" }
+      ],
+      "stat_adjustments": {
+        "radiation": -200
+      }
+    },
+    "flags": [ "IRREPLACEABLE_CONSUMABLE", "NO_INGEST" ]
+  },
+  {
+    "type": "COMESTIBLE",
+    "id": "psi_block_pills", 
+    "name": { "str": "Psi-Block Pills", "str_pl": "Psi-Block Pills" },
+    "description": "Medication designed to protect against psychic attacks from Zone mutants like Controllers. Provides temporary resistance to mental influence and psi-storms.",
+    "weight": "40 g",
+    "volume": "30 ml",
+    "price": 300,
+    "price_postapoc": 3000,
+    "symbol": "!",
+    "color": "blue",
+    "material": [ "powder" ],
+    "primary_material": "powder",
+    "charges": 8,
+    "stack_size": 15,
+    "comestible_type": "MED",
+    "tool": "null",
+    "addiction_type": "none",
+    "use_action": {
+      "type": "consume_drug",
+      "activation_message": "Your mind feels clearer and more focused.",
+      "effects": [
+        { "id": "psychosis_resist", "duration": "1 h" },
+        { "id": "psi_immunity", "duration": "1 h" },
+        { "id": "focus", "duration": "2 h" }
+      ]
+    },
+    "flags": [ "IRREPLACEABLE_CONSUMABLE", "NO_INGEST" ]
+  },
+  {
+    "type": "COMESTIBLE",
+    "id": "mental_barrier_injection",
+    "name": { "str": "Mental Barrier Injection", "str_pl": "Mental Barrier Injections" },
+    "description": "Emergency psi-protection injection that provides complete immunity to psychic attacks for a short time. Side effects include disorientation and temporary memory loss.",
+    "weight": "60 g",
+    "volume": "50 ml",
+    "price": 1200,
+    "price_postapoc": 12000,
+    "symbol": "!",
+    "color": "magenta",
+    "material": [ "plastic" ],
+    "primary_material": "plastic",
+    "charges": 1,
+    "stack_size": 3,
+    "comestible_type": "MED",
+    "tool": "null",
+    "addiction_type": "none",
+    "use_action": {
+      "type": "consume_drug",
+      "activation_message": "You inject the mental barrier serum directly into your bloodstream.",
+      "effects": [
+        { "id": "psi_immunity_strong", "duration": "30 m" },
+        { "id": "confusion", "duration": "1 h" },
+        { "id": "memory_loss", "duration": "6 h" }
+      ]
+    },
+    "flags": [ "IRREPLACEABLE_CONSUMABLE", "NO_INGEST", "TRADER_AVOID" ]
+  },
+  {
+    "type": "COMESTIBLE",
+    "id": "zone_vodka",
+    "name": { "str": "Zone Vodka", "str_pl": "Zone Vodka" },
+    "description": "High-proof alcohol that stalkers claim helps with radiation exposure. While not scientifically proven, it does provide some radiation resistance and helps deal with Zone stress. Popular trade item.",
+    "weight": "500 g",
+    "volume": "500 ml",
+    "price": 200,
+    "price_postapoc": 2000,
+    "symbol": "~",
+    "color": "white",
+    "material": [ "alcohol" ],
+    "primary_material": "alcohol",
+    "charges": 5,
+    "comestible_type": "DRINK",
+    "quench": -10,
+    "healthy": -2,
+    "addiction_type": "alcohol",
+    "addiction_potential": 3,
+    "use_action": {
+      "type": "consume_drug",
+      "activation_message": "The vodka burns but makes you feel warmer.",
+      "effects": [
+        { "id": "drunk", "duration": "2 h" },
+        { "id": "radiation_resist", "duration": "1 h" },
+        { "id": "morale_boost", "duration": "3 h" }
+      ],
+      "stat_adjustments": {
+        "radiation": -10,
+        "pain": -20
+      }
+    },
+    "flags": [ "EATEN_COLD" ]
+  },
+  {
+    "type": "GENERIC",
+    "id": "iodine_tablets",
+    "name": { "str": "Iodine Tablets", "str_pl": "Iodine Tablets" },
+    "description": "Potassium iodine tablets used to protect the thyroid gland from radioactive iodine absorption. Basic radiation protection that's better than nothing.",
+    "weight": "100 g", 
+    "volume": "80 ml",
+    "price": 50,
+    "price_postapoc": 500,
+    "symbol": "!",
+    "color": "brown",
+    "material": [ "powder" ],
+    "charges": 20,
+    "stack_size": 40,
+    "use_action": {
+      "type": "consume_drug",
+      "activation_message": "You chew the chalky iodine tablet.",
+      "effects": [
+        { "id": "radiation_resist_weak", "duration": "6 h" }
+      ],
+      "stat_adjustments": {
+        "radiation": -5
+      }
+    },
+    "flags": [ "IRREPLACEABLE_CONSUMABLE" ]
+  },
+  {
+    "type": "GENERIC",
+    "id": "scientific_medkit",
+    "name": { "str": "Scientific Medkit", "str_pl": "Scientific Medkits" },
+    "description": "Advanced medical kit designed for Zone research expeditions. Contains sophisticated trauma treatment supplies and radiation medications in a compact, efficient package.",
+    "weight": "800 g",
+    "volume": "600 ml",
+    "price": 350,
+    "price_postapoc": 3500,
+    "symbol": "+", 
+    "color": "light_blue",
+    "material": [ "plastic" ],
+    "use_action": {
+      "type": "heal",
+      "limb_power": 8,
+      "head_power": 6,
+      "torso_power": 10,
+      "bleed": 4,
+      "bite": 0.95,
+      "infect": 0.1,
+      "move_cost": 300,
+      "long_action": true,
+      "effects": [
+        { "id": "bandaged", "duration": "6 h" },
+        { "id": "radiation_resist", "duration": "2 h" }
+      ]
+    },
+    "flags": [ "IRREPLACEABLE_CONSUMABLE", "TRADER_KEEP_EQUIPPED" ]
+  },
+  {
+    "type": "GENERIC",
+    "id": "army_medkit",
+    "name": { "str": "Army Medkit", "str_pl": "Army Medkits" },
+    "description": "Military-grade medical kit with combat trauma supplies and basic anti-radiation medication. Designed for battlefield conditions and Zone operations.",
+    "weight": "1000 g",
+    "volume": "800 ml",
+    "price": 600,
+    "price_postapoc": 6000,
+    "symbol": "+",
+    "color": "green",
+    "material": [ "plastic" ],
+    "use_action": {
+      "type": "heal", 
+      "limb_power": 12,
+      "head_power": 8,
+      "torso_power": 15,
+      "bleed": 6,
+      "bite": 0.9,
+      "infect": 0.05,
+      "move_cost": 400,
+      "long_action": true,
+      "effects": [
+        { "id": "bandaged", "duration": "8 h" },
+        { "id": "antibiotic", "duration": "12 h" }
+      ]
+    },
+    "flags": [ "IRREPLACEABLE_CONSUMABLE", "TRADER_KEEP_EQUIPPED" ]
+  }
+]

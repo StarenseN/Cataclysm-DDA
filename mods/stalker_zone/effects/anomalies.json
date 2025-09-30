@@ -1,0 +1,263 @@
+[
+  {
+    "type": "field_type",
+    "id": "fd_whirligig",
+    "intensity_levels": [
+      {
+        "name": "Whirligig Edge",
+        "sym": "~",
+        "color": "light_blue",
+        "transparent": true,
+        "dangerous": false,
+        "effects": [
+          { "effect_id": "whirligig_pull", "intensity": 1, "body_part": "torso" }
+        ]
+      },
+      {
+        "name": "Whirligig Vortex", 
+        "sym": "O",
+        "color": "blue",
+        "transparent": true,
+        "dangerous": true,
+        "effects": [
+          { "effect_id": "whirligig_pull", "intensity": 3, "body_part": "torso" },
+          { "effect_id": "whirligig_damage", "intensity": 5, "body_part": "torso" }
+        ]
+      },
+      {
+        "name": "Whirligig Core",
+        "sym": "@",
+        "color": "cyan",
+        "transparent": false,
+        "dangerous": true,
+        "effects": [
+          { "effect_id": "whirligig_crush", "intensity": 10, "body_part": "torso" }
+        ]
+      }
+    ],
+    "description": "A gravitational anomaly that creates a spinning vortex of debris and energy.",
+    "priority": 10,
+    "half_life": "12 hours",
+    "phase": "gas",
+    "accelerated_decay": false,
+    "display_items": true,
+    "display_field": true
+  },
+  {
+    "type": "field_type", 
+    "id": "fd_burner",
+    "intensity_levels": [
+      {
+        "name": "Heat Shimmer",
+        "sym": ".",
+        "color": "yellow",
+        "transparent": true,
+        "dangerous": false,
+        "effects": [
+          { "effect_id": "hot", "intensity": 1, "body_part": "torso" }
+        ]
+      },
+      {
+        "name": "Scorching Air",
+        "sym": "^",
+        "color": "light_red",
+        "transparent": true,
+        "dangerous": true,
+        "effects": [
+          { "effect_id": "hot", "intensity": 3, "body_part": "torso" },
+          { "effect_id": "fire_damage", "intensity": 2, "body_part": "torso" }
+        ]
+      },
+      {
+        "name": "Burner Flame",
+        "sym": "#",
+        "color": "red",
+        "transparent": false,
+        "dangerous": true,
+        "effects": [
+          { "effect_id": "onfire", "intensity": 5, "body_part": "torso" },
+          { "effect_id": "fire_damage", "intensity": 8, "body_part": "torso" }
+        ]
+      }
+    ],
+    "description": "A thermal anomaly that creates intense heat capable of igniting organic matter.",
+    "priority": 8,
+    "half_life": "6 hours",
+    "phase": "gas",
+    "accelerated_decay": false,
+    "display_items": true,
+    "display_field": true
+  },
+  {
+    "type": "field_type",
+    "id": "fd_electro", 
+    "intensity_levels": [
+      {
+        "name": "Static Field",
+        "sym": ":",
+        "color": "light_blue",
+        "transparent": true,
+        "dangerous": false,
+        "effects": [
+          { "effect_id": "static_charge", "intensity": 1, "body_part": "torso" }
+        ]
+      },
+      {
+        "name": "Electric Crackle",
+        "sym": "*",
+        "color": "blue",
+        "transparent": true,
+        "dangerous": true,
+        "effects": [
+          { "effect_id": "zapped", "intensity": 3, "body_part": "torso" }
+        ]
+      },
+      {
+        "name": "Lightning Discharge",
+        "sym": "%",
+        "color": "white",
+        "transparent": false,
+        "dangerous": true,
+        "effects": [
+          { "effect_id": "zapped", "intensity": 8, "body_part": "torso" },
+          { "effect_id": "stunned", "intensity": 3, "body_part": "head" }
+        ]
+      }
+    ],
+    "description": "An electrical anomaly that generates powerful discharges of electricity.",
+    "priority": 9,
+    "half_life": "4 hours", 
+    "phase": "gas",
+    "accelerated_decay": false,
+    "display_items": true,
+    "display_field": true
+  },
+  {
+    "type": "field_type",
+    "id": "fd_fruit_punch",
+    "intensity_levels": [
+      {
+        "name": "Acidic Mist",
+        "sym": ":",
+        "color": "green",
+        "transparent": true,
+        "dangerous": false,
+        "effects": [
+          { "effect_id": "corroding", "intensity": 1, "body_part": "torso" }
+        ]
+      },
+      {
+        "name": "Caustic Pool",
+        "sym": "~", 
+        "color": "light_green",
+        "transparent": true,
+        "dangerous": true,
+        "effects": [
+          { "effect_id": "corroding", "intensity": 3, "body_part": "torso" },
+          { "effect_id": "acid_damage", "intensity": 4, "body_part": "foot_l" },
+          { "effect_id": "acid_damage", "intensity": 4, "body_part": "foot_r" }
+        ]
+      },
+      {
+        "name": "Acid Bath",
+        "sym": "=",
+        "color": "red",
+        "transparent": false,
+        "dangerous": true,
+        "effects": [
+          { "effect_id": "corroding", "intensity": 8, "body_part": "torso" },
+          { "effect_id": "acid_damage", "intensity": 10, "body_part": "torso" }
+        ]
+      }
+    ],
+    "description": "A chemical anomaly that creates pools of highly corrosive acid.",
+    "priority": 7,
+    "half_life": "8 hours",
+    "phase": "liquid", 
+    "accelerated_decay": false,
+    "display_items": true,
+    "display_field": true
+  },
+  {
+    "type": "field_type",
+    "id": "fd_frosty",
+    "intensity_levels": [
+      {
+        "name": "Cold Spot",
+        "sym": ".",
+        "color": "light_cyan",
+        "transparent": true,
+        "dangerous": false,
+        "effects": [
+          { "effect_id": "cold", "intensity": 1, "body_part": "torso" }
+        ]
+      },
+      {
+        "name": "Freezing Air",
+        "sym": "*",
+        "color": "cyan",
+        "transparent": true,
+        "dangerous": true,
+        "effects": [
+          { "effect_id": "cold", "intensity": 3, "body_part": "torso" },
+          { "effect_id": "frostbite", "intensity": 2, "body_part": "torso" }
+        ]
+      },
+      {
+        "name": "Ice Formation",
+        "sym": "#",
+        "color": "white",
+        "transparent": false,
+        "dangerous": true,
+        "effects": [
+          { "effect_id": "cold", "intensity": 8, "body_part": "torso" },
+          { "effect_id": "frostbite", "intensity": 6, "body_part": "torso" },
+          { "effect_id": "movement_impaired", "intensity": 4, "body_part": "foot_l" },
+          { "effect_id": "movement_impaired", "intensity": 4, "body_part": "foot_r" }
+        ]
+      }
+    ],
+    "description": "A thermal anomaly that creates extreme cold capable of flash-freezing organic matter.",
+    "priority": 8,
+    "half_life": "6 hours",
+    "phase": "gas",
+    "accelerated_decay": false,
+    "display_items": true,
+    "display_field": true
+  },
+  {
+    "type": "field_type", 
+    "id": "fd_springboard",
+    "intensity_levels": [
+      {
+        "name": "Unstable Ground",
+        "sym": "v",
+        "color": "brown",
+        "transparent": true,
+        "dangerous": false,
+        "effects": [
+          { "effect_id": "unsteady", "intensity": 1, "body_part": "foot_l" },
+          { "effect_id": "unsteady", "intensity": 1, "body_part": "foot_r" }
+        ]
+      },
+      {
+        "name": "Springboard Anomaly",
+        "sym": "^",
+        "color": "yellow",
+        "transparent": true,
+        "dangerous": true,
+        "effects": [
+          { "effect_id": "launched", "intensity": 8, "body_part": "torso" },
+          { "effect_id": "fall_damage", "intensity": 6, "body_part": "torso" }
+        ]
+      }
+    ],
+    "description": "A gravitational anomaly that violently launches objects upward when triggered.",
+    "priority": 6,
+    "half_life": "24 hours",
+    "phase": "solid",
+    "accelerated_decay": false,
+    "display_items": true,
+    "display_field": true
+  }
+]

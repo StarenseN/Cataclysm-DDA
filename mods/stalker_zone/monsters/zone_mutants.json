@@ -1,0 +1,423 @@
+[
+  {
+    "type": "MONSTER",
+    "id": "mon_zone_blinddog",
+    "name": { "str": "Blind Dog" },
+    "description": "A hairless, eyeless canine mutant with enlarged ears and nostrils. It hunts by sound and scent, making it incredibly dangerous in packs. Its skin shows signs of radiation exposure.",
+    "default_faction": "zone_mutants",
+    "bodytype": "dog",
+    "species": [ "MUTANT" ],
+    "volume": "30000 ml",
+    "weight": "40 kg",
+    "hp": 80,
+    "speed": 130,
+    "material": [ "flesh" ],
+    "symbol": "d",
+    "color": "brown",
+    "aggression": 10,
+    "morale": 30,
+    "melee_skill": 6,
+    "melee_dice": 2,
+    "melee_dice_sides": 6,
+    "melee_cut": 4,
+    "dodge": 2,
+    "armor_bash": 2,
+    "armor_cut": 1,
+    "vision_day": 1,
+    "vision_night": 8,
+    "hearing": 20,
+    "smells": 15,
+    "luminance": 0,
+    "special_attacks": [
+      {
+        "type": "bite",
+        "cooldown": 8,
+        "damage_max_instance": [ { "damage_type": "cut", "amount": 12 } ]
+      },
+      {
+        "type": "leap",
+        "cooldown": 15,
+        "max_range": 4
+      }
+    ],
+    "death_drops": {
+      "groups": [ [ "zone_mutant_meat", 80 ], [ "zone_mutant_parts", 30 ] ]
+    },
+    "flags": [ "SEES_SOUND", "HEARS", "SMELLS", "WARM", "BASHES", "GROUP_BASH", "PACK_HUNTER" ]
+  },
+  {
+    "type": "MONSTER",
+    "id": "mon_zone_pseudodog",
+    "name": { "str": "Pseudodog" },
+    "description": "A larger canine mutant with psychic abilities. It can create visual illusions to confuse prey and hunters. Its eyes glow with an unnatural light, and it seems more intelligent than normal dogs.",
+    "default_faction": "zone_mutants",
+    "bodytype": "dog",
+    "species": [ "MUTANT" ],
+    "volume": "45000 ml", 
+    "weight": "55 kg",
+    "hp": 120,
+    "speed": 120,
+    "material": [ "flesh" ],
+    "symbol": "D",
+    "color": "dark_gray",
+    "aggression": 15,
+    "morale": 50,
+    "melee_skill": 7,
+    "melee_dice": 2,
+    "melee_dice_sides": 8,
+    "melee_cut": 6,
+    "dodge": 3,
+    "armor_bash": 4,
+    "armor_cut": 2,
+    "vision_day": 12,
+    "vision_night": 15,
+    "hearing": 12,
+    "smells": 10,
+    "luminance": 0,
+    "special_attacks": [
+      {
+        "type": "bite",
+        "cooldown": 6,
+        "damage_max_instance": [ { "damage_type": "cut", "amount": 16 } ]
+      },
+      {
+        "id": "psi_illusion",
+        "cooldown": 20,
+        "spell_data": { "id": "pseudodog_illusion" }
+      }
+    ],
+    "death_drops": {
+      "groups": [ [ "zone_mutant_meat", 90 ], [ "zone_mutant_parts", 50 ], [ "zone_psi_parts", 25 ] ]
+    },
+    "flags": [ "SEES", "HEARS", "SMELLS", "WARM", "BASHES", "PSI_IMMUNE", "PACK_HUNTER" ]
+  },
+  {
+    "type": "MONSTER", 
+    "id": "mon_zone_snork",
+    "name": { "str": "Snork" },
+    "description": "A horrifically mutated human with a gas mask permanently fused to its face. It moves with unnatural agility and can leap great distances. The sound of its labored breathing through the mask is unmistakable.",
+    "default_faction": "zone_mutants",
+    "bodytype": "human",
+    "species": [ "MUTANT", "HUMAN" ],
+    "volume": "70000 ml",
+    "weight": "75 kg",
+    "hp": 100,
+    "speed": 140,
+    "material": [ "flesh" ],
+    "symbol": "@",
+    "color": "green",
+    "aggression": 20,
+    "morale": 40,
+    "melee_skill": 8,
+    "melee_dice": 2,
+    "melee_dice_sides": 10,
+    "melee_cut": 8,
+    "dodge": 4,
+    "armor_bash": 3,
+    "armor_cut": 4,
+    "vision_day": 8,
+    "vision_night": 6,
+    "hearing": 8,
+    "smells": 5,
+    "luminance": 0,
+    "special_attacks": [
+      {
+        "type": "leap",
+        "cooldown": 8,
+        "max_range": 6,
+        "min_range": 2
+      },
+      {
+        "id": "claw_attack",
+        "cooldown": 4,
+        "damage_max_instance": [ { "damage_type": "cut", "amount": 20 } ]
+      }
+    ],
+    "death_drops": {
+      "groups": [ [ "zone_mutant_meat", 70 ], [ "zone_military_salvage", 40 ], [ "zone_gas_mask_parts", 60 ] ]
+    },
+    "flags": [ "SEES", "HEARS", "SMELLS", "WARM", "BASHES", "CLIMBS", "JUMP", "NO_BREATHE" ]
+  },
+  {
+    "type": "MONSTER",
+    "id": "mon_zone_controller", 
+    "name": { "str": "Controller" },
+    "description": "A grotesquely mutated human with an oversized cranium and powerful telepathic abilities. It can control minds and create terrifying hallucinations. Its body is emaciated, but its psychic power is immense.",
+    "default_faction": "zone_mutants",
+    "bodytype": "human",
+    "species": [ "MUTANT", "HUMAN" ],
+    "volume": "80000 ml",
+    "weight": "60 kg",
+    "hp": 80,
+    "speed": 90,
+    "material": [ "flesh" ],
+    "symbol": "C",
+    "color": "magenta",
+    "aggression": 25,
+    "morale": 80,
+    "melee_skill": 4,
+    "melee_dice": 1,
+    "melee_dice_sides": 6,
+    "melee_cut": 2,
+    "dodge": 6,
+    "armor_bash": 1,
+    "armor_cut": 1,
+    "vision_day": 15,
+    "vision_night": 12,
+    "hearing": 15,
+    "smells": 8,
+    "luminance": 0,
+    "special_attacks": [
+      {
+        "id": "psi_attack",
+        "cooldown": 12,
+        "spell_data": { "id": "controller_psi_blast" }
+      },
+      {
+        "id": "mind_control",
+        "cooldown": 25,
+        "spell_data": { "id": "controller_dominate" }
+      },
+      {
+        "id": "fear_aura",
+        "cooldown": 8,
+        "spell_data": { "id": "controller_terror" }
+      }
+    ],
+    "death_drops": {
+      "groups": [ [ "zone_mutant_meat", 40 ], [ "zone_psi_parts", 90 ], [ "zone_brain_tissue", 100 ] ]
+    },
+    "flags": [ "SEES", "HEARS", "SMELLS", "WARM", "PSI_IMMUNE", "PSYCHOPATH", "NEVER_WANDER" ]
+  },
+  {
+    "type": "MONSTER",
+    "id": "mon_zone_bloodsucker",
+    "name": { "str": "Bloodsucker" },
+    "description": "An invisible predator with retractable tentacles for draining blood. It can become nearly invisible when motionless and strikes without warning. Only the sound of its breathing gives away its position.",
+    "default_faction": "zone_mutants",
+    "bodytype": "human", 
+    "species": [ "MUTANT" ],
+    "volume": "75000 ml",
+    "weight": "70 kg",
+    "hp": 150,
+    "speed": 110,
+    "material": [ "flesh" ],
+    "symbol": "B",
+    "color": "red",
+    "aggression": 30,
+    "morale": 60,
+    "melee_skill": 9,
+    "melee_dice": 3,
+    "melee_dice_sides": 8,
+    "melee_cut": 10,
+    "dodge": 5,
+    "armor_bash": 6,
+    "armor_cut": 4,
+    "vision_day": 10,
+    "vision_night": 15,
+    "hearing": 12,
+    "smells": 15,
+    "luminance": 0,
+    "special_attacks": [
+      {
+        "id": "blood_drain",
+        "cooldown": 15,
+        "damage_max_instance": [ { "damage_type": "stab", "amount": 25 } ]
+      },
+      {
+        "type": "leap",
+        "cooldown": 10,
+        "max_range": 5,
+        "min_range": 2
+      }
+    ],
+    "death_drops": {
+      "groups": [ [ "zone_mutant_meat", 85 ], [ "zone_mutant_parts", 70 ], [ "zone_tentacle", 90 ] ]
+    },
+    "flags": [ "SEES", "HEARS", "SMELLS", "WARM", "BASHES", "CLIMBS", "CAMOUFLAGE", "NIGHT_INVISIBILITY" ]
+  },
+  {
+    "type": "MONSTER",
+    "id": "mon_zone_pseudogiant",
+    "name": { "str": "Pseudogiant" },
+    "description": "A massive humanoid creature standing over 3 meters tall. Its body appears to be composed of multiple fused organisms. Incredibly durable and aggressive, it can hurl objects and charge with devastating force.",
+    "default_faction": "zone_mutants",
+    "bodytype": "human",
+    "species": [ "MUTANT" ],
+    "volume": "300000 ml",
+    "weight": "500 kg",
+    "hp": 800,
+    "speed": 80,
+    "material": [ "flesh" ],
+    "symbol": "G",
+    "color": "brown",
+    "aggression": 40,
+    "morale": 100,
+    "melee_skill": 12,
+    "melee_dice": 4,
+    "melee_dice_sides": 12,
+    "melee_cut": 15,
+    "dodge": 1,
+    "armor_bash": 15,
+    "armor_cut": 10,
+    "vision_day": 8,
+    "vision_night": 6,
+    "hearing": 6,
+    "smells": 10,
+    "luminance": 0,
+    "special_attacks": [
+      {
+        "id": "charge_attack",
+        "cooldown": 20,
+        "damage_max_instance": [ { "damage_type": "bash", "amount": 50 } ]
+      },
+      {
+        "id": "throw_debris",
+        "cooldown": 15,
+        "spell_data": { "id": "pseudogiant_throw" }
+      },
+      {
+        "id": "ground_pound", 
+        "cooldown": 25,
+        "spell_data": { "id": "pseudogiant_stomp" }
+      }
+    ],
+    "death_drops": {
+      "groups": [ [ "zone_mutant_meat", 100 ], [ "zone_mutant_parts", 95 ], [ "zone_giant_heart", 80 ] ]
+    },
+    "flags": [ "SEES", "HEARS", "SMELLS", "WARM", "BASHES", "DESTROYS", "NEVER_WANDER", "HUGE" ]
+  },
+  {
+    "type": "MONSTER",
+    "id": "mon_zone_flesh", 
+    "name": { "str": "Flesh" },
+    "description": "A bloated, pig-like mutant with mottled skin and aggressive behavior. While not as dangerous as other Zone creatures, it's territorial and will attack in groups. Its meat is still edible if properly prepared.",
+    "default_faction": "zone_mutants",
+    "bodytype": "pig",
+    "species": [ "MUTANT" ],
+    "volume": "60000 ml",
+    "weight": "90 kg",
+    "hp": 100,
+    "speed": 100,
+    "material": [ "flesh" ],
+    "symbol": "f",
+    "color": "pink",
+    "aggression": 8,
+    "morale": 25,
+    "melee_skill": 5,
+    "melee_dice": 2,
+    "melee_dice_sides": 8,
+    "melee_cut": 3,
+    "dodge": 1,
+    "armor_bash": 4,
+    "armor_cut": 2,
+    "vision_day": 6,
+    "vision_night": 4,
+    "hearing": 8,
+    "smells": 12,
+    "luminance": 0,
+    "special_attacks": [
+      {
+        "type": "bite",
+        "cooldown": 10,
+        "damage_max_instance": [ { "damage_type": "cut", "amount": 12 } ]
+      }
+    ],
+    "death_drops": {
+      "groups": [ [ "zone_mutant_meat", 100 ], [ "zone_mutant_hide", 80 ] ]
+    },
+    "flags": [ "SEES", "HEARS", "SMELLS", "WARM", "BASHES", "GROUP_BASH" ]
+  },
+  {
+    "type": "MONSTER",
+    "id": "mon_zone_boar",
+    "name": { "str": "Mutant Boar" },
+    "description": "A massive wild boar mutated by Zone radiation. Its hide is thick and mottled, and its tusks have grown to enormous size. Extremely territorial and aggressive, especially when protecting young.",
+    "default_faction": "zone_mutants",
+    "bodytype": "pig",
+    "species": [ "MUTANT" ],
+    "volume": "120000 ml",
+    "weight": "180 kg", 
+    "hp": 200,
+    "speed": 110,
+    "material": [ "flesh" ],
+    "symbol": "B",
+    "color": "brown",
+    "aggression": 15,
+    "morale": 50,
+    "melee_skill": 8,
+    "melee_dice": 3,
+    "melee_dice_sides": 10,
+    "melee_cut": 8,
+    "dodge": 2,
+    "armor_bash": 8,
+    "armor_cut": 6,
+    "vision_day": 8,
+    "vision_night": 6,
+    "hearing": 10,
+    "smells": 14,
+    "luminance": 0,
+    "special_attacks": [
+      {
+        "id": "tusk_charge",
+        "cooldown": 12,
+        "damage_max_instance": [ { "damage_type": "stab", "amount": 25 } ]
+      },
+      {
+        "type": "bite",
+        "cooldown": 8,
+        "damage_max_instance": [ { "damage_type": "cut", "amount": 15 } ]
+      }
+    ],
+    "death_drops": {
+      "groups": [ [ "zone_mutant_meat", 100 ], [ "zone_mutant_hide", 90 ], [ "zone_boar_tusks", 70 ] ]
+    },
+    "flags": [ "SEES", "HEARS", "SMELLS", "WARM", "BASHES", "NEVER_WANDER" ]
+  },
+  {
+    "type": "MONSTER",
+    "id": "mon_zone_poltergeist",
+    "name": { "str": "Poltergeist" },
+    "description": "An invisible entity of pure psychic energy that can manipulate objects telekinetically. It cannot be seen directly, only detected by the objects it throws and the electrical disturbances it creates.",
+    "default_faction": "zone_mutants",
+    "bodytype": "blob",
+    "species": [ "MUTANT" ],
+    "volume": "1000 ml",
+    "weight": "0 kg",
+    "hp": 50,
+    "speed": 150,
+    "material": [ "null" ],
+    "symbol": " ",
+    "color": "white",
+    "aggression": 20,
+    "morale": 100,
+    "melee_skill": 0,
+    "melee_dice": 0,
+    "melee_dice_sides": 0,
+    "melee_cut": 0,
+    "dodge": 10,
+    "armor_bash": 0,
+    "armor_cut": 0,
+    "vision_day": 20,
+    "vision_night": 20,
+    "hearing": 20,
+    "smells": 0,
+    "luminance": 0,
+    "special_attacks": [
+      {
+        "id": "telekinetic_throw",
+        "cooldown": 8,
+        "spell_data": { "id": "poltergeist_throw" }
+      },
+      {
+        "id": "electrical_surge",
+        "cooldown": 15,
+        "spell_data": { "id": "poltergeist_emp" }
+      }
+    ],
+    "death_drops": {
+      "groups": [ [ "zone_psi_parts", 50 ] ]
+    },
+    "flags": [ "SEES", "HEARS", "WARM", "PSI_IMMUNE", "INVISIBLE", "INTANGIBLE", "NO_BREATHE", "FLIES" ]
+  }
+]

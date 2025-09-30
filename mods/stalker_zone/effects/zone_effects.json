@@ -1,0 +1,239 @@
+[
+  {
+    "type": "effect_type",
+    "id": "whirligig_pull",
+    "name": [ "Gravitational Pull", "Gravitational Pulls" ],
+    "desc": [ "You feel a strange tugging sensation.", "You're being pulled by an invisible force!", "The gravitational pull is overwhelming!" ],
+    "apply_message": "You feel gravity shift around you.",
+    "remove_message": "The gravitational distortion fades.",
+    "rating": "bad",
+    "max_intensity": 10,
+    "dur_add_perc": 100,
+    "int_add_val": 1,
+    "show_in_info": true,
+    "effects": [
+      { "effect": "movement_impaired", "duration": "10 s", "intensity": 2 }
+    ]
+  },
+  {
+    "type": "effect_type", 
+    "id": "whirligig_damage",
+    "name": [ "Gravitational Stress", "Gravitational Stresses" ],
+    "desc": [ "Your body is under immense gravitational stress.", "The anomaly is crushing you!", "You're being torn apart by gravitational forces!" ],
+    "apply_message": "The gravitational forces are tearing at your body!",
+    "remove_message": "The crushing sensation subsides.",
+    "rating": "bad",
+    "max_intensity": 10,
+    "dur_add_perc": 100,
+    "int_add_val": 3,
+    "show_in_info": true,
+    "hurt_msg": [ "The gravitational forces crush your body.", 3 ],
+    "damage_over_time": [
+      { "damage_type": "bash", "amount": 2, "bodyparts": [ "torso", "head", "arm_l", "arm_r", "leg_l", "leg_r" ] }
+    ]
+  },
+  {
+    "type": "effect_type",
+    "id": "whirligig_crush", 
+    "name": [ "Gravitational Collapse", "Gravitational Collapses" ],
+    "desc": [ "You're at the center of a gravitational anomaly - death is imminent!" ],
+    "apply_message": "The anomaly's core is crushing you to death!",
+    "remove_message": "Somehow, you escape the gravitational collapse.",
+    "rating": "bad",
+    "max_intensity": 10,
+    "dur_add_perc": 100,
+    "int_add_val": 10,
+    "show_in_info": true,
+    "hurt_msg": [ "Your bones crack under the immense gravitational pressure.", 10 ],
+    "damage_over_time": [
+      { "damage_type": "bash", "amount": 15, "bodyparts": [ "torso", "head", "arm_l", "arm_r", "leg_l", "leg_r" ] }
+    ]
+  },
+  {
+    "type": "effect_type",
+    "id": "fire_damage",
+    "name": [ "Thermal Burns", "Thermal Burns" ],
+    "desc": [ "Your skin is burning from extreme heat.", "You're suffering severe burns!", "The heat is cooking you alive!" ],
+    "apply_message": "Searing heat burns your skin!",
+    "remove_message": "The burning sensation fades.",
+    "rating": "bad",
+    "max_intensity": 10,
+    "dur_add_perc": 100,
+    "int_add_val": 2,
+    "show_in_info": true,
+    "hurt_msg": [ "The intense heat burns your flesh.", 4 ],
+    "damage_over_time": [
+      { "damage_type": "heat", "amount": 3, "bodyparts": [ "torso", "head", "arm_l", "arm_r", "leg_l", "leg_r" ] }
+    ]
+  },
+  {
+    "type": "effect_type",
+    "id": "static_charge",
+    "name": [ "Static Buildup", "Static Buildups" ],
+    "desc": [ "Your hair stands on end from static electricity.", "Static electricity crackles around you.", "You're surrounded by an electrical field!" ],
+    "apply_message": "Static electricity builds up around you.",
+    "remove_message": "The static charge dissipates.",
+    "rating": "neutral",
+    "max_intensity": 5,
+    "dur_add_perc": 100,
+    "int_add_val": 1,
+    "show_in_info": true
+  },
+  {
+    "type": "effect_type",
+    "id": "corroding",
+    "name": [ "Acid Corrosion", "Acid Corrosions" ],
+    "desc": [ "Acid is eating away at your equipment and skin.", "The corrosive chemicals are dissolving everything!", "You're being dissolved by the caustic environment!" ],
+    "apply_message": "Acid begins corroding your gear and flesh!",
+    "remove_message": "The acid stops eating at you.",
+    "rating": "bad",
+    "max_intensity": 10,
+    "dur_add_perc": 100,
+    "int_add_val": 2,
+    "show_in_info": true,
+    "hurt_msg": [ "Acid burns through your skin.", 3 ],
+    "damage_over_time": [
+      { "damage_type": "acid", "amount": 2, "bodyparts": [ "torso", "arm_l", "arm_r", "leg_l", "leg_r" ] }
+    ]
+  },
+  {
+    "type": "effect_type",
+    "id": "acid_damage",
+    "name": [ "Chemical Burns", "Chemical Burns" ],
+    "desc": [ "Caustic chemicals are burning your skin.", "The acid is eating through your flesh!", "Your body is being dissolved by corrosive chemicals!" ],
+    "apply_message": "Caustic acid burns your skin!",
+    "remove_message": "The chemical burning stops.",
+    "rating": "bad",
+    "max_intensity": 15,
+    "dur_add_perc": 100,
+    "int_add_val": 3,
+    "show_in_info": true,
+    "hurt_msg": [ "Acid burns deep into your flesh.", 5 ],
+    "damage_over_time": [
+      { "damage_type": "acid", "amount": 4, "bodyparts": [ "torso", "head", "arm_l", "arm_r", "leg_l", "leg_r", "foot_l", "foot_r" ] }
+    ]
+  },
+  {
+    "type": "effect_type",
+    "id": "frostbite",
+    "name": [ "Frostbite", "Frostbites" ],
+    "desc": [ "Your extremities are going numb from cold.", "Frostbite is setting into your flesh.", "The extreme cold is freezing your body solid!" ],
+    "apply_message": "Numbness spreads through your body from the cold.",
+    "remove_message": "Feeling returns to your frozen limbs.",
+    "rating": "bad",
+    "max_intensity": 10,
+    "dur_add_perc": 100,
+    "int_add_val": 2,
+    "show_in_info": true,
+    "hurt_msg": [ "The cold numbs your flesh.", 2 ],
+    "damage_over_time": [
+      { "damage_type": "cold", "amount": 1, "bodyparts": [ "hand_l", "hand_r", "foot_l", "foot_r" ] }
+    ],
+    "effects": [
+      { "effect": "movement_impaired", "duration": "5 m", "intensity": 1 }
+    ]
+  },
+  {
+    "type": "effect_type",
+    "id": "movement_impaired",
+    "name": [ "Impaired Movement", "Impaired Movements" ],
+    "desc": [ "Your movement is restricted.", "You can barely move.", "You're almost completely immobilized!" ],
+    "apply_message": "Your movement becomes restricted.",
+    "remove_message": "You can move freely again.",
+    "rating": "bad",
+    "max_intensity": 10,
+    "dur_add_perc": 100,
+    "int_add_val": 1,
+    "show_in_info": true
+  },
+  {
+    "type": "effect_type",
+    "id": "launched", 
+    "name": [ "Launched", "Launched" ],
+    "desc": [ "You've been violently thrown into the air!" ],
+    "apply_message": "You're suddenly launched skyward!",
+    "remove_message": "You hit the ground hard.",
+    "rating": "bad",
+    "max_intensity": 10,
+    "dur_add_perc": 100,
+    "int_add_val": 8,
+    "show_in_info": true,
+    "hurt_msg": [ "You're thrown through the air!", 8 ]
+  },
+  {
+    "type": "effect_type",
+    "id": "fall_damage",
+    "name": [ "Fall Impact", "Fall Impacts" ],
+    "desc": [ "You're suffering from a hard landing.", "The impact has injured you severely.", "You've been badly hurt by the fall!" ],
+    "apply_message": "You crash into the ground!",
+    "remove_message": "You recover from the fall.",
+    "rating": "bad",
+    "max_intensity": 10,
+    "dur_add_perc": 100,
+    "int_add_val": 6,
+    "show_in_info": true,
+    "hurt_msg": [ "The impact breaks bones and bruises flesh.", 6 ],
+    "damage_over_time": [
+      { "damage_type": "bash", "amount": 8, "bodyparts": [ "torso", "head", "arm_l", "arm_r", "leg_l", "leg_r" ] }
+    ]
+  },
+  {
+    "type": "effect_type",
+    "id": "unsteady",
+    "name": [ "Unsteady", "Unsteady" ],
+    "desc": [ "The ground feels unstable beneath your feet.", "You sense something is wrong with this area.", "The surface seems ready to give way!" ],
+    "apply_message": "The ground feels unstable.",
+    "remove_message": "You find solid footing again.",
+    "rating": "neutral",
+    "max_intensity": 5,
+    "dur_add_perc": 100,
+    "int_add_val": 1,
+    "show_in_info": true
+  },
+  {
+    "type": "effect_type",
+    "id": "zone_sickness",
+    "name": [ "Zone Sickness", "Zone Sicknesses" ],
+    "desc": [ "You feel nauseous from prolonged Zone exposure.", "The Zone's influence is making you sick.", "Your body is rejecting the Zone's unnatural energy." ],
+    "apply_message": "You feel queasy from Zone exposure.",
+    "remove_message": "The nausea passes.",
+    "rating": "bad",
+    "max_intensity": 5,
+    "dur_add_perc": 100,
+    "int_add_val": 1,
+    "show_in_info": true,
+    "effects": [
+      { "effect": "nausea", "duration": "30 m", "intensity": 1 }
+    ]
+  },
+  {
+    "type": "effect_type",
+    "id": "psi_pressure",
+    "name": [ "Psychic Pressure", "Psychic Pressures" ],
+    "desc": [ "You feel an alien presence pressing against your mind.", "Something is trying to invade your thoughts.", "Your consciousness is under psychic attack!" ],
+    "apply_message": "An alien presence presses against your mind.",
+    "remove_message": "The psychic pressure recedes.",
+    "rating": "bad",
+    "max_intensity": 10,
+    "dur_add_perc": 100,
+    "int_add_val": 2,
+    "show_in_info": true,
+    "effects": [
+      { "effect": "hallucination", "duration": "10 m", "intensity": 1 },
+      { "effect": "fear", "duration": "5 m", "intensity": 2 }
+    ]
+  },
+  {
+    "type": "effect_type",
+    "id": "artifact_resonance", 
+    "name": [ "Artifact Resonance", "Artifact Resonances" ],
+    "desc": [ "You sense artifacts nearby.", "Powerful artifacts are affecting the local area.", "The resonance of multiple artifacts is overwhelming!" ],
+    "apply_message": "You feel the presence of artifacts.",
+    "remove_message": "The artifact resonance fades.",
+    "rating": "neutral",
+    "max_intensity": 5,
+    "dur_add_perc": 100,
+    "int_add_val": 1,
+    "show_in_info": true
+  }
+]

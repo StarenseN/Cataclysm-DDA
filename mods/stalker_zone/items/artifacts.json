@@ -1,0 +1,428 @@
+[
+  {
+    "type": "GENERIC",
+    "id": "artifact_droplet",
+    "name": { "str": "Droplet", "str_pl": "Droplets" },
+    "description": "A crystalline formation that looks like frozen water droplets. It provides protection against chemical hazards but emits low levels of radiation. Found near Fruit Punch anomalies.",
+    "weight": "250 g",
+    "volume": "100 ml",
+    "price": 1500,
+    "price_postapoc": 15000,
+    "symbol": "*",
+    "color": "light_blue",
+    "material": [ "anomalous_crystal" ],
+    "flags": [ "ARTIFACT", "RADIOACTIVE", "NO_SALVAGE" ],
+    "relic_data": {
+      "passive_effects": [
+        {
+          "has": "WORN",
+          "condition": "ALWAYS",
+          "values": [
+            { "value": "RESIST_ACID", "add": 15 },
+            { "value": "RESIST_CHEM", "add": 10 }
+          ],
+          "hit_you_effect": [ { "id": "artifact_chemical_protect", "duration": "1 s" } ]
+        }
+      ],
+      "active_effects": [],
+      "charge_info": {
+        "recharge_type": "periodic",
+        "time": "1 h",
+        "regenerate_ammo": true
+      }
+    },
+    "use_action": {
+      "type": "emit_actor",
+      "emits": [ "emit_artifact_radiation_weak" ],
+      "scale_qty": true
+    },
+    "artifact": true
+  },
+  {
+    "type": "GENERIC",
+    "id": "artifact_fireball",
+    "name": { "str": "Fireball", "str_pl": "Fireballs" },
+    "description": "An orange crystalline sphere that radiates warmth. It provides excellent protection against fire and heat, but constantly emits radiation. Created in Burner anomalies.",
+    "weight": "400 g",
+    "volume": "150 ml", 
+    "price": 2800,
+    "price_postapoc": 28000,
+    "symbol": "o",
+    "color": "red",
+    "material": [ "anomalous_crystal" ],
+    "flags": [ "ARTIFACT", "RADIOACTIVE", "WARM", "NO_SALVAGE" ],
+    "relic_data": {
+      "passive_effects": [
+        {
+          "has": "WORN",
+          "condition": "ALWAYS",
+          "values": [
+            { "value": "RESIST_HEAT", "add": 25 },
+            { "value": "BODY_TEMP_MOD", "add": 500 }
+          ],
+          "hit_you_effect": [ { "id": "artifact_thermal_protect", "duration": "1 s" } ]
+        }
+      ],
+      "active_effects": [],
+      "charge_info": {
+        "recharge_type": "periodic", 
+        "time": "30 m",
+        "regenerate_ammo": true
+      }
+    },
+    "use_action": {
+      "type": "emit_actor",
+      "emits": [ "emit_artifact_radiation_medium" ],
+      "scale_qty": true
+    },
+    "artifact": true
+  },
+  {
+    "type": "GENERIC",
+    "id": "artifact_stone_blood",
+    "name": { "str": "Stone Blood", "str_pl": "Stone Bloods" },
+    "description": "A dark red mineral formation with metallic veins. It hardens the user's body against physical impacts and provides bleeding resistance. Found in gravitational anomalies.",
+    "weight": "600 g",
+    "volume": "200 ml",
+    "price": 2200,
+    "price_postapoc": 22000,
+    "symbol": "#",
+    "color": "dark_gray",
+    "material": [ "anomalous_metal" ],
+    "flags": [ "ARTIFACT", "RADIOACTIVE", "NO_SALVAGE" ],
+    "relic_data": {
+      "passive_effects": [
+        {
+          "has": "WORN",
+          "condition": "ALWAYS",
+          "values": [
+            { "value": "ARMOR_BASH", "add": 8 },
+            { "value": "ARMOR_CUT", "add": 4 }
+          ],
+          "hit_you_effect": [ { "id": "artifact_impact_protect", "duration": "1 s" } ]
+        }
+      ],
+      "active_effects": [],
+      "charge_info": {
+        "recharge_type": "periodic",
+        "time": "45 m", 
+        "regenerate_ammo": true
+      }
+    },
+    "use_action": {
+      "type": "emit_actor",
+      "emits": [ "emit_artifact_radiation_weak" ],
+      "scale_qty": true
+    },
+    "artifact": true
+  },
+  {
+    "type": "GENERIC", 
+    "id": "artifact_bubble",
+    "name": { "str": "Bubble", "str_pl": "Bubbles" },
+    "description": "A translucent sphere containing swirling energy. It creates a protective field around the user that deflects impacts, but reduces endurance. Found in Whirligig anomalies.",
+    "weight": "300 g",
+    "volume": "250 ml",
+    "price": 4500,
+    "price_postapoc": 45000,
+    "symbol": "O",
+    "color": "cyan",
+    "material": [ "anomalous_crystal" ],
+    "flags": [ "ARTIFACT", "RADIOACTIVE", "NO_SALVAGE" ],
+    "relic_data": {
+      "passive_effects": [
+        {
+          "has": "WORN", 
+          "condition": "ALWAYS",
+          "values": [
+            { "value": "ARMOR_BASH", "add": 12 },
+            { "value": "ARMOR_BULLET", "add": 8 },
+            { "value": "STAMINA_REGEN_MOD", "multiply": -0.2 }
+          ],
+          "hit_you_effect": [ { "id": "artifact_kinetic_protect", "duration": "2 s" } ]
+        }
+      ],
+      "active_effects": [],
+      "charge_info": {
+        "recharge_type": "periodic",
+        "time": "1 h",
+        "regenerate_ammo": true
+      }
+    },
+    "use_action": {
+      "type": "emit_actor",
+      "emits": [ "emit_artifact_radiation_medium" ],
+      "scale_qty": true
+    },
+    "artifact": true
+  },
+  {
+    "type": "GENERIC",
+    "id": "artifact_battery",
+    "name": { "str": "Battery", "str_pl": "Batteries" },
+    "description": "A metallic cylindrical artifact that hums with electrical energy. It can power electronic devices indefinitely but emits electromagnetic interference. Created by Electro anomalies.",
+    "weight": "500 g",
+    "volume": "180 ml",
+    "price": 8000,
+    "price_postapoc": 80000,
+    "symbol": "|",
+    "color": "yellow", 
+    "material": [ "anomalous_metal" ],
+    "flags": [ "ARTIFACT", "RADIOACTIVE", "ELECTRONIC", "NO_SALVAGE" ],
+    "relic_data": {
+      "passive_effects": [
+        {
+          "has": "WORN",
+          "condition": "ALWAYS", 
+          "values": [
+            { "value": "BIONIC_POWER", "add": 100 }
+          ],
+          "hit_you_effect": [ { "id": "artifact_power_boost", "duration": "10 s" } ]
+        }
+      ],
+      "active_effects": [
+        {
+          "activation_message": "The Battery surges with power, recharging nearby devices.",
+          "cost": 1,
+          "active_effects": [ { "id": "artifact_recharge_devices", "duration": "1 s" } ]
+        }
+      ],
+      "charge_info": {
+        "recharge_type": "periodic",
+        "time": "10 m",
+        "regenerate_ammo": true, 
+        "max_charges": 10
+      }
+    },
+    "use_action": {
+      "type": "emit_actor",
+      "emits": [ "emit_artifact_radiation_weak", "emit_artifact_emp" ],
+      "scale_qty": true
+    },
+    "artifact": true
+  },
+  {
+    "type": "GENERIC",
+    "id": "artifact_moonlight",
+    "name": { "str": "Moonlight", "str_pl": "Moonlights" },
+    "description": "A pale blue crystal that glows softly with inner light. It accelerates healing and regeneration, but also increases radiation exposure. Very rare, found only in special spatial anomalies.",
+    "weight": "200 g",
+    "volume": "120 ml",
+    "price": 12000,
+    "price_postapoc": 120000,
+    "symbol": "*",
+    "color": "light_blue",
+    "material": [ "anomalous_crystal" ],
+    "flags": [ "ARTIFACT", "RADIOACTIVE", "LIGHT_8", "NO_SALVAGE" ],
+    "relic_data": {
+      "passive_effects": [
+        {
+          "has": "WORN",
+          "condition": "ALWAYS",
+          "values": [
+            { "value": "HEAL_RATE", "multiply": 3.0 },
+            { "value": "MEND_RATE", "multiply": 2.0 }
+          ],
+          "hit_you_effect": [ { "id": "artifact_regeneration", "duration": "1 h" } ]
+        }
+      ],
+      "active_effects": [],
+      "charge_info": {
+        "recharge_type": "periodic",
+        "time": "2 h",
+        "regenerate_ammo": true
+      }
+    },
+    "use_action": {
+      "type": "emit_actor",
+      "emits": [ "emit_artifact_radiation_strong" ],
+      "scale_qty": true
+    },
+    "artifact": true
+  },
+  {
+    "type": "GENERIC",
+    "id": "artifact_soul",
+    "name": { "str": "Soul", "str_pl": "Souls" },
+    "description": "An organic-looking mass that pulses rhythmically like a heartbeat. It provides powerful healing effects but significantly increases radiation absorption. Found near psychic anomalies and mutant lairs.",
+    "weight": "350 g", 
+    "volume": "180 ml",
+    "price": 18000,
+    "price_postapoc": 180000,
+    "symbol": "&",
+    "color": "magenta",
+    "material": [ "anomalous_flesh" ],
+    "flags": [ "ARTIFACT", "RADIOACTIVE", "ORGANIC", "NO_SALVAGE" ],
+    "relic_data": {
+      "passive_effects": [
+        {
+          "has": "WORN",
+          "condition": "ALWAYS",
+          "values": [
+            { "value": "HEAL_RATE", "multiply": 5.0 },
+            { "value": "STAMINA_REGEN_MOD", "multiply": 1.5 }
+          ],
+          "hit_you_effect": [ { "id": "artifact_life_force", "duration": "2 h" } ]
+        }
+      ],
+      "active_effects": [
+        {
+          "activation_message": "The Soul pulses with life energy, healing your wounds.",
+          "cost": 3,
+          "active_effects": [ { "id": "artifact_instant_heal", "duration": "1 s" } ]
+        }
+      ],
+      "charge_info": {
+        "recharge_type": "periodic",
+        "time": "3 h",
+        "regenerate_ammo": true,
+        "max_charges": 5
+      }
+    },
+    "use_action": {
+      "type": "emit_actor", 
+      "emits": [ "emit_artifact_radiation_extreme" ],
+      "scale_qty": true
+    },
+    "artifact": true
+  },
+  {
+    "type": "GENERIC",
+    "id": "artifact_compass",
+    "name": { "str": "Compass", "str_pl": "Compasses" },
+    "description": "A crystalline formation resembling a magnetic compass. It helps locate nearby artifacts and provides navigation assistance, but interferes with other electronic devices.",
+    "weight": "150 g",
+    "volume": "100 ml",
+    "price": 6500,
+    "price_postapoc": 65000,
+    "symbol": "+",
+    "color": "white",
+    "material": [ "anomalous_crystal" ],
+    "flags": [ "ARTIFACT", "RADIOACTIVE", "ELECTRONIC", "NO_SALVAGE" ],
+    "relic_data": {
+      "passive_effects": [
+        {
+          "has": "WORN",
+          "condition": "ALWAYS",
+          "values": [
+            { "value": "ARTIFACT_DETECT_RANGE", "add": 20 },
+            { "value": "MAP_MEMORY", "add": 50 }
+          ],
+          "hit_you_effect": [ { "id": "artifact_navigation", "duration": "10 m" } ]
+        }
+      ],
+      "active_effects": [
+        {
+          "activation_message": "The Compass spins and points toward nearby artifacts.",
+          "cost": 1,
+          "active_effects": [ { "id": "artifact_detection_pulse", "duration": "30 s" } ]
+        }
+      ],
+      "charge_info": {
+        "recharge_type": "periodic",
+        "time": "1 h",
+        "regenerate_ammo": true,
+        "max_charges": 8
+      }
+    },
+    "use_action": {
+      "type": "emit_actor",
+      "emits": [ "emit_artifact_radiation_weak" ],
+      "scale_qty": true
+    },
+    "artifact": true
+  },
+  {
+    "type": "GENERIC", 
+    "id": "artifact_goldfish",
+    "name": { "str": "Goldfish", "str_pl": "Goldfish" },
+    "description": "An extremely rare golden artifact shaped like a fish. Legend says it can grant wishes or beneficial mutations, but its true power remains mysterious. Priceless and coveted by all factions.",
+    "weight": "100 g",
+    "volume": "80 ml",
+    "price": 50000,
+    "price_postapoc": 500000,
+    "symbol": "<",
+    "color": "yellow",
+    "material": [ "anomalous_metal" ],
+    "flags": [ "ARTIFACT", "RADIOACTIVE", "UNIQUE", "NO_SALVAGE" ],
+    "relic_data": {
+      "passive_effects": [
+        {
+          "has": "WORN",
+          "condition": "ALWAYS",
+          "values": [
+            { "value": "LUCK", "add": 5 },
+            { "value": "MORALE", "add": 20 }
+          ],
+          "hit_you_effect": [ { "id": "artifact_fortune", "duration": "24 h" } ]
+        }
+      ],
+      "active_effects": [
+        {
+          "activation_message": "The Goldfish glows brightly - your wish might come true...",
+          "cost": 10,
+          "active_effects": [ { "id": "artifact_wish", "duration": "1 s" } ]
+        }
+      ],
+      "charge_info": {
+        "recharge_type": "periodic",
+        "time": "24 h",
+        "regenerate_ammo": true,
+        "max_charges": 1
+      }
+    },
+    "use_action": {
+      "type": "emit_actor",
+      "emits": [ "emit_artifact_radiation_medium" ],
+      "scale_qty": true
+    },
+    "artifact": true
+  },
+  {
+    "type": "GENERIC",
+    "id": "artifact_hypercube", 
+    "name": { "str": "Hypercube", "str_pl": "Hypercubes" },
+    "description": "An impossible geometric shape that seems to exist in more than three dimensions. Looking at it causes headaches, but it provides incredible psychic protection and spatial awareness.",
+    "weight": "800 g",
+    "volume": "300 ml",
+    "price": 75000,
+    "price_postapoc": 750000,
+    "symbol": "%",
+    "color": "magenta",
+    "material": [ "anomalous_crystal" ],
+    "flags": [ "ARTIFACT", "RADIOACTIVE", "UNIQUE", "PSI_SHIELD", "NO_SALVAGE" ],
+    "relic_data": {
+      "passive_effects": [
+        {
+          "has": "WORN",
+          "condition": "ALWAYS",
+          "values": [
+            { "value": "RESIST_PSI", "add": 50 },
+            { "value": "PERCEPTION", "add": 3 },
+            { "value": "INTELLIGENCE", "add": 2 }
+          ],
+          "hit_you_effect": [ { "id": "artifact_dimensional_shield", "duration": "1 h" } ]
+        }
+      ],
+      "active_effects": [
+        {
+          "activation_message": "Reality bends around the Hypercube as it manipulates space and time.",
+          "cost": 5,
+          "active_effects": [ { "id": "artifact_reality_shift", "duration": "10 s" } ]
+        }
+      ],
+      "charge_info": {
+        "recharge_type": "periodic",
+        "time": "6 h",
+        "regenerate_ammo": true,
+        "max_charges": 3
+      }
+    },
+    "use_action": {
+      "type": "emit_actor",
+      "emits": [ "emit_artifact_radiation_strong" ],
+      "scale_qty": true
+    },
+    "artifact": true
+  }
+]

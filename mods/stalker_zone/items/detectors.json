@@ -1,0 +1,266 @@
+[
+  {
+    "type": "TOOL",
+    "id": "detector_echo",
+    "name": { "str": "Echo Detector", "str_pl": "Echo Detectors" },
+    "description": "A basic artifact detector that uses audio beeping to indicate proximity to anomalous objects. The beeping increases in frequency as you get closer to artifacts. Range: 15 meters. Battery life: 6 hours continuous use.",
+    "weight": "800 g",
+    "volume": "400 ml", 
+    "price": 2500,
+    "price_postapoc": 25000,
+    "to_hit": -1,
+    "bashing": 2,
+    "material": [ "plastic", "steel" ],
+    "symbol": "(",
+    "color": "light_gray",
+    "ammo": [ "battery" ],
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "rigid": true,
+        "flag_restriction": [ "BATTERY_MEDIUM" ],
+        "default_magazine": "medium_battery_cell"
+      }
+    ],
+    "charges_per_use": 1,
+    "use_action": {
+      "type": "detector",
+      "range": 15,
+      "detect_flags": [ "ARTIFACT" ],
+      "sound_level": 20,
+      "sound_message": "beep... beep... beep...",
+      "fast_sound_message": "beepbeepbeep!"
+    },
+    "flags": [ "ELECTRONIC", "WATER_BREAK_ACTIVE", "TRADER_AVOID" ],
+    "techniques": [ "WBLOCK_1" ]
+  },
+  {
+    "type": "TOOL", 
+    "id": "detector_bear",
+    "name": { "str": "Bear Detector", "str_pl": "Bear Detectors" },
+    "description": "An advanced artifact detector with LED display and directional indication. Shows approximate direction and distance to detected artifacts. More accurate and quieter than the Echo. Range: 25 meters. Battery life: 8 hours.",
+    "weight": "650 g",
+    "volume": "350 ml",
+    "price": 5000,
+    "price_postapoc": 50000,
+    "to_hit": -1,
+    "bashing": 3,
+    "material": [ "plastic", "aluminum" ],
+    "symbol": "(",
+    "color": "blue",
+    "ammo": [ "battery" ],
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "rigid": true,
+        "flag_restriction": [ "BATTERY_MEDIUM" ],
+        "default_magazine": "medium_battery_cell"
+      }
+    ],
+    "charges_per_use": 1,
+    "use_action": {
+      "type": "detector",
+      "range": 25,
+      "detect_flags": [ "ARTIFACT" ],
+      "sound_level": 5,
+      "sound_message": "The LED display shows artifact signatures nearby.",
+      "fast_sound_message": "Multiple artifacts detected! The display lights up!"
+    },
+    "flags": [ "ELECTRONIC", "WATER_BREAK_ACTIVE", "LIGHT_5", "TRADER_AVOID" ],
+    "techniques": [ "WBLOCK_1" ]
+  },
+  {
+    "type": "TOOL",
+    "id": "detector_veles",
+    "name": { "str": "Veles Detector", "str_pl": "Veles Detectors" },
+    "description": "Top-of-the-line artifact detector with advanced targeting system. Can identify artifact types and provides precise location data. Silent operation perfect for stealth. Range: 40 meters. Battery life: 12 hours.",
+    "weight": "750 g",
+    "volume": "380 ml",
+    "price": 12000,
+    "price_postapoc": 120000,
+    "to_hit": -1,
+    "bashing": 4,
+    "material": [ "plastic", "aluminum", "superalloy" ],
+    "symbol": "(",
+    "color": "green", 
+    "ammo": [ "battery" ],
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "rigid": true,
+        "flag_restriction": [ "BATTERY_MEDIUM" ],
+        "default_magazine": "medium_battery_cell"
+      }
+    ],
+    "charges_per_use": 1,
+    "use_action": {
+      "type": "detector",
+      "range": 40,
+      "detect_flags": [ "ARTIFACT", "ANOMALY" ],
+      "sound_level": 0,
+      "sound_message": "The advanced display shows detailed artifact analysis.",
+      "fast_sound_message": "High-value artifacts detected! Precise coordinates acquired."
+    },
+    "flags": [ "ELECTRONIC", "WATER_BREAK_ACTIVE", "LIGHT_3", "SILENT", "TRADER_AVOID" ],
+    "techniques": [ "WBLOCK_2" ]
+  },
+  {
+    "type": "TOOL",
+    "id": "geiger_basic",
+    "name": { "str": "SRP-68 Geiger Counter", "str_pl": "SRP-68 Geiger Counters" },
+    "description": "Basic Soviet-era radiation detector that uses clicking sounds to indicate radiation levels. Essential safety equipment in the Zone. Simple but reliable technology that rarely fails.",
+    "weight": "400 g",
+    "volume": "250 ml",
+    "price": 500,
+    "price_postapoc": 5000,
+    "to_hit": -1,
+    "bashing": 2,
+    "material": [ "plastic", "steel" ],
+    "symbol": "[",
+    "color": "yellow",
+    "ammo": [ "battery" ],
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL", 
+        "rigid": true,
+        "flag_restriction": [ "BATTERY_LIGHT" ],
+        "default_magazine": "light_battery_cell"
+      }
+    ],
+    "charges_per_use": 1,
+    "use_action": {
+      "type": "geiger",
+      "sound_level": 15,
+      "sound_message": "click... click... click..."
+    },
+    "flags": [ "ELECTRONIC", "WATER_BREAK_ACTIVE", "BELT_CLIP" ],
+    "techniques": [ "WBLOCK_1" ]
+  },
+  {
+    "type": "TOOL",
+    "id": "geiger_professional",
+    "name": { "str": "Professional Dosimeter", "str_pl": "Professional Dosimeters" },
+    "description": "Advanced radiation measurement device with digital display and data logging capabilities. Provides precise radiation readings and can store measurement history. Used by scientists and serious stalkers.",
+    "weight": "600 g",
+    "volume": "300 ml",
+    "price": 3500,
+    "price_postapoc": 35000,
+    "to_hit": -1,
+    "bashing": 3,
+    "material": [ "plastic", "aluminum" ],
+    "symbol": "[",
+    "color": "light_blue",
+    "ammo": [ "battery" ],
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "rigid": true,
+        "flag_restriction": [ "BATTERY_MEDIUM" ],
+        "default_magazine": "medium_battery_cell"
+      }
+    ],
+    "charges_per_use": 1,
+    "use_action": {
+      "type": "geiger",
+      "sound_level": 8,
+      "sound_message": "Digital display shows precise radiation measurements."
+    },
+    "flags": [ "ELECTRONIC", "WATER_BREAK_ACTIVE", "LIGHT_2", "BELT_CLIP" ],
+    "techniques": [ "WBLOCK_1" ]
+  },
+  {
+    "type": "TOOL",
+    "id": "pda_stalker", 
+    "name": { "str": "Stalker PDA", "str_pl": "Stalker PDAs" },
+    "description": "Personal Digital Assistant modified for Zone use. Contains maps, mission information, stalker contacts, and communication capabilities. Essential tool for any serious Zone explorer. EMP-hardened electronics.",
+    "weight": "350 g",
+    "volume": "200 ml",
+    "price": 2500,
+    "price_postapoc": 25000,
+    "to_hit": -1,
+    "bashing": 1,
+    "material": [ "plastic", "aluminum" ],
+    "symbol": "(",
+    "color": "dark_gray",
+    "ammo": [ "battery" ],
+    "pocket_data": [
+      {
+        "pocket_type": "MAGAZINE_WELL",
+        "rigid": true,
+        "flag_restriction": [ "BATTERY_MEDIUM" ],
+        "default_magazine": "medium_battery_cell"
+      }
+    ],
+    "charges_per_use": 1,
+    "use_action": [
+      {
+        "type": "transform",
+        "msg": "You power on the PDA.",
+        "target": "pda_stalker_on",
+        "active": true,
+        "need_charges": 1,
+        "need_charges_msg": "The PDA's battery is dead."
+      }
+    ],
+    "flags": [ "ELECTRONIC", "WATER_BREAK", "EMP_PROOF", "TRADER_AVOID" ],
+    "techniques": [ "WBLOCK_1" ]
+  },
+  {
+    "type": "TOOL",
+    "id": "pda_stalker_on",
+    "copy-from": "pda_stalker", 
+    "name": { "str": "Stalker PDA (on)", "str_pl": "Stalker PDAs (on)" },
+    "description": "Personal Digital Assistant running Zone software. The screen shows a map of your current area with known anomaly locations marked. Various apps provide mission tracking, inventory management, and encrypted communication.",
+    "power_draw": 50,
+    "revert_to": "pda_stalker",
+    "use_action": [
+      {
+        "type": "transform",
+        "msg": "You power off the PDA.",
+        "target": "pda_stalker",
+        "menu_text": "Turn off"
+      },
+      {
+        "type": "map_extend",
+        "msg": "You check the PDA's map database.",
+        "menu_text": "View map data"
+      },
+      {
+        "type": "mission_list",
+        "msg": "You review your current missions.", 
+        "menu_text": "Check missions"
+      }
+    ],
+    "flags": [ "ELECTRONIC", "WATER_BREAK", "EMP_PROOF", "LIGHT_2", "TRADER_AVOID" ]
+  },
+  {
+    "type": "GENERIC",
+    "id": "anomaly_detector_parts",
+    "name": { "str": "Anomaly Detector Parts", "str_pl": "Anomaly Detector Parts" },
+    "description": "Salvaged components from damaged artifact detectors. Includes sensors, circuits, and housing parts that could be used to repair or build detection equipment.",
+    "weight": "500 g",
+    "volume": "300 ml",
+    "price": 800,
+    "price_postapoc": 8000,
+    "material": [ "plastic", "aluminum", "steel" ],
+    "symbol": "%",
+    "color": "light_gray",
+    "flags": [ "ELECTRONIC_PARTS" ]
+  },
+  {
+    "type": "GENERIC",
+    "id": "detector_battery_pack",
+    "name": { "str": "Detector Battery Pack", "str_pl": "Detector Battery Packs" },
+    "description": "High-capacity battery designed for extended artifact detector operation. Provides longer operating time than standard batteries. Popular among professional stalkers.",
+    "weight": "200 g",
+    "volume": "150 ml",
+    "price": 400,
+    "price_postapoc": 4000,
+    "material": [ "plastic", "aluminum" ],
+    "symbol": "=",
+    "color": "green",
+    "flags": [ "BATTERY_MEDIUM", "RECHARGE" ],
+    "magazine_data": { "capacity": 500 },
+    "ammo": [ "battery" ]
+  }
+]

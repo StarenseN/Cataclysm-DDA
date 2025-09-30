@@ -1,0 +1,15 @@
+[
+  {
+    "type": "MOD_INFO",
+    "id": "stalker_zone",
+    "name": "Zone: S.T.A.L.K.E.R. Overhaul",
+    "authors": [ "Zone Development Team" ],
+    "description": "A comprehensive overhaul transforming CDDA into a S.T.A.L.K.E.R.-inspired survival experience. Features anomalies, mutants, artifacts, factions, and the mysterious Zone.",
+    "category": "total_conversion",
+    "dependencies": [ "dda" ],
+    "version": "1.0.0-alpha",
+    "obsolete": false,
+    "core": false,
+    "path": ""
+  }
+]

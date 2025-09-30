@@ -1,0 +1,278 @@
+[
+  {
+    "type": "profession",
+    "ident": "zone_stalker",
+    "name": "Stalker",
+    "description": "An experienced Zone veteran with survival skills and basic equipment. Balanced for exploration and combat.",
+    "points": 2,
+    "skills": [
+      { "level": 3, "name": "survival" },
+      { "level": 2, "name": "dodge" },
+      { "level": 2, "name": "rifle" },
+      { "level": 2, "name": "pistol" },
+      { "level": 1, "name": "electronics" },
+      { "level": 1, "name": "firstaid" }
+    ],
+    "traits": [ "NIGHTVISION", "ROBUST" ],
+    "items": {
+      "both": {
+        "items": [
+          "leather_jacket",
+          "jeans",
+          "boots",
+          "backpack",
+          "knife_combat",
+          "flashlight",
+          "matches",
+          "water_clean",
+          "water_clean",
+          "can_beans",
+          "can_spam",
+          "bandages",
+          "aspirin"
+        ],
+        "entries": [
+          { "item": "makarov", "ammo-item": "9x18mm" },
+          { "item": "ak74", "ammo-item": "545x39mm", "charges": 30 },
+          { "item": "545x39mm", "count": 60 }
+        ]
+      }
+    }
+  },
+  {
+    "type": "profession",
+    "ident": "zone_scientist",
+    "name": "Zone Researcher",
+    "description": "A scientist studying Zone phenomena. Equipped with research tools and protective gear but limited combat ability.",
+    "points": 3,
+    "skills": [
+      { "level": 4, "name": "electronics" },
+      { "level": 3, "name": "computers" },
+      { "level": 3, "name": "firstaid" },
+      { "level": 2, "name": "survival" },
+      { "level": 1, "name": "pistol" },
+      { "level": 3, "name": "chemistry" }
+    ],
+    "traits": [ "PACIFIST", "BOOKWORM", "ROBUST" ],
+    "items": {
+      "both": {
+        "items": [
+          "hazmat_suit",
+          "boots_steel",
+          "backpack",
+          "geiger_off",
+          "antenna",
+          "laptop",
+          "battery",
+          "battery",
+          "flashlight",
+          "water_clean",
+          "water_clean",
+          "mre_beef",
+          "mre_chicken",
+          "bandages",
+          "aspirin",
+          "iodine",
+          "codeine",
+          "notebook"
+        ],
+        "entries": [
+          { "item": "sig_mosquito", "ammo-item": "22_lr" },
+          { "item": "22_lr", "count": 100 }
+        ]
+      }
+    }
+  },
+  {
+    "type": "profession",
+    "ident": "zone_military_deserter",
+    "name": "Military Deserter",
+    "description": "Former military personnel who went AWOL in the Zone. Excellent combat skills and military equipment.",
+    "points": 4,
+    "skills": [
+      { "level": 4, "name": "rifle" },
+      { "level": 3, "name": "pistol" },
+      { "level": 3, "name": "dodge" },
+      { "level": 2, "name": "survival" },
+      { "level": 2, "name": "firstaid" },
+      { "level": 1, "name": "electronics" }
+    ],
+    "traits": [ "MARTIAL_ARTS", "ROBUST", "KILLER" ],
+    "items": {
+      "both": {
+        "items": [
+          "army_top",
+          "army_pants",
+          "boots_combat",
+          "backpack_army",
+          "knife_combat",
+          "vest",
+          "helmet_army",
+          "flashlight",
+          "matches",
+          "water_clean",
+          "mre_beef",
+          "mre_chicken",
+          "bandages",
+          "codeine"
+        ],
+        "entries": [
+          { "item": "glock_19", "ammo-item": "9mm" },
+          { "item": "ak74", "ammo-item": "545x39mm", "charges": 30 },
+          { "item": "545x39mm", "count": 120 },
+          { "item": "9mm", "count": 45 }
+        ]
+      }
+    }
+  },
+  {
+    "type": "profession",
+    "ident": "zone_trader",
+    "name": "Zone Trader",
+    "description": "A merchant specializing in Zone artifacts and equipment. Good with people but poor in combat.",
+    "points": 2,
+    "skills": [
+      { "level": 4, "name": "speech" },
+      { "level": 3, "name": "barter" },
+      { "level": 2, "name": "survival" },
+      { "level": 2, "name": "mechanics" },
+      { "level": 1, "name": "pistol" },
+      { "level": 1, "name": "electronics" }
+    ],
+    "traits": [ "PACIFIST", "ROBUST", "PRETTY" ],
+    "items": {
+      "both": {
+        "items": [
+          "suit",
+          "dress_shoes",
+          "backpack",
+          "briefcase",
+          "cash_card",
+          "flashlight",
+          "matches",
+          "water_clean",
+          "sandwich_t",
+          "chocolate",
+          "bandages",
+          "aspirin",
+          "radio",
+          "cell_phone"
+        ],
+        "entries": [
+          { "item": "sw_22", "ammo-item": "22_lr" },
+          { "item": "22_lr", "count": 50 }
+        ]
+      }
+    }
+  },
+  {
+    "type": "profession",
+    "ident": "zone_rookie",
+    "name": "Rookie Stalker",
+    "description": "A newcomer to the Zone with basic equipment and limited experience. Cheap to play but challenging start.",
+    "points": 0,
+    "skills": [
+      { "level": 1, "name": "survival" },
+      { "level": 1, "name": "pistol" },
+      { "level": 1, "name": "dodge" }
+    ],
+    "traits": [ "ROBUST" ],
+    "items": {
+      "both": {
+        "items": [
+          "jeans",
+          "tshirt",
+          "sneakers",
+          "backpack_hiking",
+          "knife_butter",
+          "flashlight",
+          "matches",
+          "water",
+          "sandwich_pb",
+          "bandages"
+        ],
+        "entries": [
+          { "item": "tokarev", "ammo-item": "762_25" },
+          { "item": "762_25", "count": 24 }
+        ]
+      }
+    }
+  },
+  {
+    "type": "profession",
+    "ident": "zone_duty_member",
+    "name": "Duty Soldier",
+    "description": "Member of the Duty faction dedicated to containing the Zone's expansion. Military discipline and equipment.",
+    "points": 5,
+    "skills": [
+      { "level": 4, "name": "rifle" },
+      { "level": 3, "name": "pistol" },
+      { "level": 3, "name": "dodge" },
+      { "level": 2, "name": "survival" },
+      { "level": 2, "name": "firstaid" }
+    ],
+    "traits": [ "MARTIAL_ARTS", "ROBUST", "PSYCHOPATH" ],
+    "items": {
+      "both": {
+        "items": [
+          "army_top",
+          "army_pants",
+          "boots_combat",
+          "backpack_army",
+          "knife_combat",
+          "vest_leather",
+          "helmet_army",
+          "flashlight",
+          "water_clean",
+          "mre_beef",
+          "bandages",
+          "codeine"
+        ],
+        "entries": [
+          { "item": "sig_p230", "ammo-item": "380_ACP" },
+          { "item": "hk_g36", "ammo-item": "223", "charges": 30 },
+          { "item": "223", "count": 90 },
+          { "item": "380_ACP", "count": 24 }
+        ]
+      }
+    }
+  },
+  {
+    "type": "profession",
+    "ident": "zone_freedom_fighter",
+    "name": "Freedom Fighter",
+    "description": "Anarchist Freedom faction member fighting against authoritarian control of the Zone.",
+    "points": 4,
+    "skills": [
+      { "level": 3, "name": "rifle" },
+      { "level": 3, "name": "pistol" },
+      { "level": 3, "name": "dodge" },
+      { "level": 2, "name": "survival" },
+      { "level": 1, "name": "firstaid" }
+    ],
+    "traits": [ "ROBUST", "KILLER", "ADRENALINE" ],
+    "items": {
+      "both": {
+        "items": [
+          "fatigues",
+          "boots_combat",
+          "backpack",
+          "knife_combat",
+          "bandana",
+          "flashlight",
+          "water_clean",
+          "can_beans",
+          "chocolate",
+          "bandages",
+          "codeine"
+        ],
+        "entries": [
+          { "item": "beretta_m9", "ammo-item": "9mm" },
+          { "item": "ar15", "ammo-item": "223", "charges": 30 },
+          { "item": "223", "count": 90 },
+          { "item": "9mm", "count": 45 }
+        ]
+      }
+    }
+  }
+]
