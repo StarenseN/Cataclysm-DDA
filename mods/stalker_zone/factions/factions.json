@@ -8,22 +8,18 @@
     "known_by_u": true,
     "size": 100,
     "power": 50,
-    "food_supply": 100,
-    "wealth": 75,
-    "description": "Independent stalkers seeking fortune and survival in the Zone. United only by their desire for freedom and profit."
+    "description": "Independent stalkers seeking fortune and survival in the Zone."
   },
   {
     "type": "faction",
     "id": "duty",
-    "name": "Duty",
+    "name": "Duty", 
     "likes_u": -10,
     "respects_u": 0,
     "known_by_u": true,
     "size": 80,
     "power": 90,
-    "food_supply": 120,
-    "wealth": 85,
-    "description": "Military faction dedicated to containing the Zone's horrors and protecting the outside world from its expansion."
+    "description": "Military faction dedicated to containing the Zone's horrors."
   },
   {
     "type": "faction",
@@ -34,9 +30,7 @@
     "known_by_u": true,
     "size": 70,
     "power": 75,
-    "food_supply": 90,
-    "wealth": 70,
-    "description": "Anarchist fighters opposing authoritarian control over the Zone. They believe the Zone's secrets should be freely shared."
+    "description": "Anarchist fighters opposing authoritarian control over the Zone."
   },
   {
     "type": "faction",
@@ -47,9 +41,7 @@
     "known_by_u": true,
     "size": 30,
     "power": 25,
-    "food_supply": 110,
-    "wealth": 150,
-    "description": "Research scientists studying the Zone's anomalous phenomena. They seek to understand and potentially harness the Zone's power."
+    "description": "Research scientists studying the Zone's anomalous phenomena."
   },
   {
     "type": "faction",
@@ -60,9 +52,7 @@
     "known_by_u": true,
     "size": 60,
     "power": 40,
-    "food_supply": 60,
-    "wealth": 45,
-    "description": "Criminals and outcasts who prey on other stalkers. They survive through robbery, extortion, and violence."
+    "description": "Criminals and outcasts who prey on other stalkers."
   },
   {
     "type": "faction",
@@ -73,9 +63,7 @@
     "known_by_u": true,
     "size": 120,
     "power": 100,
-    "food_supply": 150,
-    "wealth": 200,
-    "description": "Government forces tasked with containing the Zone and eliminating illegal stalkers. Well-equipped but struggling against Zone's dangers."
+    "description": "Government forces tasked with containing the Zone."
   },
   {
     "type": "faction",
@@ -86,8 +74,6 @@
     "known_by_u": false,
     "size": 40,
     "power": 120,
-    "food_supply": 200,
-    "wealth": 500,
-    "description": "Fanatical cult serving the Zone's consciousness. They guard the center with supernatural dedication and advanced technology."
+    "description": "Fanatical cult serving the Zone's consciousness."
   }
 ]

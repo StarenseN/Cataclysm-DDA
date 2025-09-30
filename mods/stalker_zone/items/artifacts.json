@@ -1,6 +1,6 @@
 [
   {
-    "type": "GENERIC",
+    "type": "TOOL",
     "id": "artifact_droplet",
     "name": { "str": "Droplet", "str_pl": "Droplets" },
     "description": "A crystalline formation that looks like frozen water droplets. It provides protection against chemical hazards but emits low levels of radiation. Found near Fruit Punch anomalies.",
@@ -39,7 +39,7 @@
     "artifact": true
   },
   {
-    "type": "GENERIC",
+    "type": "TOOL",
     "id": "artifact_fireball",
     "name": { "str": "Fireball", "str_pl": "Fireballs" },
     "description": "An orange crystalline sphere that radiates warmth. It provides excellent protection against fire and heat, but constantly emits radiation. Created in Burner anomalies.",
@@ -78,7 +78,7 @@
     "artifact": true
   },
   {
-    "type": "GENERIC",
+    "type": "TOOL",
     "id": "artifact_stone_blood",
     "name": { "str": "Stone Blood", "str_pl": "Stone Bloods" },
     "description": "A dark red mineral formation with metallic veins. It hardens the user's body against physical impacts and provides bleeding resistance. Found in gravitational anomalies.",
@@ -117,7 +117,7 @@
     "artifact": true
   },
   {
-    "type": "GENERIC", 
+    "type": "TOOL", 
     "id": "artifact_bubble",
     "name": { "str": "Bubble", "str_pl": "Bubbles" },
     "description": "A translucent sphere containing swirling energy. It creates a protective field around the user that deflects impacts, but reduces endurance. Found in Whirligig anomalies.",
@@ -157,7 +157,7 @@
     "artifact": true
   },
   {
-    "type": "GENERIC",
+    "type": "TOOL",
     "id": "artifact_battery",
     "name": { "str": "Battery", "str_pl": "Batteries" },
     "description": "A metallic cylindrical artifact that hums with electrical energy. It can power electronic devices indefinitely but emits electromagnetic interference. Created by Electro anomalies.",
@@ -202,7 +202,7 @@
     "artifact": true
   },
   {
-    "type": "GENERIC",
+    "type": "TOOL",
     "id": "artifact_moonlight",
     "name": { "str": "Moonlight", "str_pl": "Moonlights" },
     "description": "A pale blue crystal that glows softly with inner light. It accelerates healing and regeneration, but also increases radiation exposure. Very rare, found only in special spatial anomalies.",
@@ -241,7 +241,7 @@
     "artifact": true
   },
   {
-    "type": "GENERIC",
+    "type": "TOOL",
     "id": "artifact_soul",
     "name": { "str": "Soul", "str_pl": "Souls" },
     "description": "An organic-looking mass that pulses rhythmically like a heartbeat. It provides powerful healing effects but significantly increases radiation absorption. Found near psychic anomalies and mutant lairs.",
@@ -287,7 +287,7 @@
     "artifact": true
   },
   {
-    "type": "GENERIC",
+    "type": "TOOL",
     "id": "artifact_compass",
     "name": { "str": "Compass", "str_pl": "Compasses" },
     "description": "A crystalline formation resembling a magnetic compass. It helps locate nearby artifacts and provides navigation assistance, but interferes with other electronic devices.",
@@ -333,7 +333,7 @@
     "artifact": true
   },
   {
-    "type": "GENERIC", 
+    "type": "TOOL", 
     "id": "artifact_goldfish",
     "name": { "str": "Goldfish", "str_pl": "Goldfish" },
     "description": "An extremely rare golden artifact shaped like a fish. Legend says it can grant wishes or beneficial mutations, but its true power remains mysterious. Priceless and coveted by all factions.",
@@ -379,7 +379,7 @@
     "artifact": true
   },
   {
-    "type": "GENERIC",
+    "type": "TOOL",
     "id": "artifact_hypercube", 
     "name": { "str": "Hypercube", "str_pl": "Hypercubes" },
     "description": "An impossible geometric shape that seems to exist in more than three dimensions. Looking at it causes headaches, but it provides incredible psychic protection and spatial awareness.",
