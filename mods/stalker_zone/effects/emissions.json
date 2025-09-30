@@ -10,11 +10,7 @@
     "max_intensity": 3,
     "dur_add_perc": 100,
     "int_add_val": 1,
-    "show_in_info": true,
-    "effects": [
-      { "effect": "anxiety", "duration": "15 m", "intensity": 2 },
-      { "effect": "nausea", "duration": "10 m", "intensity": 1 }
-    ]
+    "show_in_info": true
   },
   {
     "type": "effect_type",
@@ -28,16 +24,7 @@
     "dur_add_perc": 100,
     "int_add_val": 3,
     "show_in_info": true,
-    "hurt_msg": [ "The emission energy courses through your body, destroying cells and corrupting DNA.", 8 ],
-    "damage_over_time": [
-      { "damage_type": "pure", "amount": 25, "bodyparts": [ "torso", "head", "arm_l", "arm_r", "leg_l", "leg_r" ] }
-    ],
-    "effects": [
-      { "effect": "radiation", "duration": "24 h", "intensity": 5 },
-      { "effect": "hallucination", "duration": "4 h", "intensity": 3 },
-      { "effect": "stunned", "duration": "30 m", "intensity": 2 },
-      { "effect": "nausea", "duration": "2 h", "intensity": 3 }
-    ]
+    "hurt_msg": [ "The emission energy courses through your body, destroying cells and corrupting DNA.", 8 ]
   },
   {
     "type": "effect_type", 
@@ -51,15 +38,7 @@
     "dur_add_perc": 100,
     "int_add_val": 1,
     "show_in_info": true,
-    "hurt_msg": [ "Radiation burns through your cells.", 3 ],
-    "damage_over_time": [
-      { "damage_type": "pure", "amount": 1, "bodyparts": [ "torso" ] }
-    ],
-    "effects": [
-      { "effect": "nausea", "duration": "1 h", "intensity": 2 },
-      { "effect": "weakness", "duration": "2 h", "intensity": 1 },
-      { "effect": "vomiting", "duration": "30 m", "intensity": 1 }
-    ]
+    "hurt_msg": [ "Radiation burns through your cells.", 3 ]
   },
   {
     "type": "effect_type",
@@ -85,12 +64,6 @@
     "max_intensity": 6,
     "dur_add_perc": 100,
     "int_add_val": 2,
-    "show_in_info": true,
-    "effects": [
-      { "effect": "hallucination", "duration": "20 m", "intensity": 2 },
-      { "effect": "fear", "duration": "15 m", "intensity": 3 },
-      { "effect": "anxiety", "duration": "30 m", "intensity": 2 },
-      { "effect": "confusion", "duration": "10 m", "intensity": 1 }
-    ]
+    "show_in_info": true
   }
 ]
